@@ -17,11 +17,11 @@
         }
         a { text-decoration: none; }
         
-        /* --- カラー設定（ベースは元のネイビー＆ゴールド） --- */
+        /* --- カラー設定（元の色に戻しました） --- */
         :root {
             --main-color: #0d2538; /* 信頼のネイビー */
             --accent-color: #d4af37; /* 高級感・金銭メリットのゴールド */
-            --line-green: #06c755; /* LINE公式カラー */
+            --line-green: #06c755; /* LINE公式カラー（ボタン専用） */
             --white: #ffffff;
             --text-color: #333333;
         }
@@ -35,7 +35,7 @@
         }
         .text-center { text-align: center; }
         
-        /* 見出し（ゴールドの下線） */
+        /* 見出し（ゴールドの下線に戻しました） */
         .section-title {
             font-size: 1.8rem;
             color: var(--main-color);
@@ -45,10 +45,10 @@
             padding-bottom: 10px;
         }
 
-        /* ★ここだけ変更：LINE風ボタン★ */
+        /* ★ここだけ緑（LINE色）になります★ */
         .btn-line {
             display: inline-block;
-            background-color: var(--line-green); /* ここを緑に！ */
+            background-color: var(--line-green); /* ここだけ緑！ */
             color: var(--white);
             font-size: 1.2rem;
             font-weight: bold;
@@ -91,11 +91,11 @@
             display: block;
         }
 
-        /* --- メリット --- */
+        /* --- メリット（枠線をゴールドに戻しました） --- */
         .merit { background-color: var(--white); padding: 60px 0; }
         .merit-box {
             background: #fff;
-            border: 2px solid var(--accent-color); /* 枠はゴールドのまま */
+            border: 2px solid var(--accent-color); /* ゴールド */
             border-radius: 10px;
             padding: 30px;
             margin-top: 20px;
@@ -103,13 +103,13 @@
         }
         .merit-text { font-size: 1.2rem; font-weight: bold; }
 
-        /* --- 仕組み --- */
+        /* --- 仕組み（線をネイビーに戻しました） --- */
         .reason { background-color: #f0f4f8; padding: 60px 0; }
         .step {
             background: #f9f9f9;
             padding: 15px;
             margin-bottom: 15px;
-            border-left: 5px solid var(--main-color); /* 左線はネイビーのまま */
+            border-left: 5px solid var(--main-color); /* ネイビー */
         }
 
         /* --- 会社概要 --- */
@@ -187,4 +187,14 @@
             <h3>運営者情報</h3>
             <p class="company-info">
                 屋号/会社名：株式会社LAVISH<br>
-                運営責任者：小川 裕介<br>
+                運営責任者：小川 裕介<br> 
+                所在地：大阪市中央区南船場1丁目16-23<br>
+                免許番号：大阪府知事（1）64799<br>
+                連絡先：info@lavish-corp.com
+            </p>
+            <p style="margin-top:20px;">&copy; 2024 Daito Cost Cut Support.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
