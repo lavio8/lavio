@@ -73,26 +73,17 @@
             color: var(--main-color);
         }
 
-        /* --- メインビジュアル（FV） --- */
-        .hero {
-            background: linear-gradient(135deg, var(--main-color), #2c3e50);
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
+        /* --- メインビジュアル（画像） --- */
+        .main-visual {
+            width: 100%;
+            background-color: #fff;
+            line-height: 0; /* 画像下の隙間を消す */
         }
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-        .hero .highlight {
-            color: var(--accent-color);
-            font-size: 2.8rem;
-            font-weight: bold;
+        .main-visual img {
+            width: 100%;
+            height: auto;
             display: block;
-            margin-top: 10px;
         }
-        .hero p { font-size: 1.1rem; margin-bottom: 30px; }
 
         /* --- メリット --- */
         .merit { background-color: var(--white); padding: 60px 0; }
@@ -108,27 +99,6 @@
 
         /* --- 仕組み --- */
         .reason { background-color: #f0f4f8; padding: 60px 0; }
-        .reason-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .reason-item {
-            background: var(--white);
-            width: 48%;
-            padding: 20px;
-            box-sizing: border-box;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        @media (max-width: 768px) {
-            .reason-item { width: 100%; }
-            .hero h1 { font-size: 1.6rem; }
-            .hero .highlight { font-size: 2rem; }
-        }
-
-        /* --- 流れ --- */
-        .flow { background-color: var(--white); padding: 60px 0; }
         .step {
             background: #f9f9f9;
             padding: 15px;
@@ -136,26 +106,14 @@
             border-left: 5px solid var(--main-color);
         }
 
-        /* --- 会社概要（法的に必須） --- */
+        /* --- 会社概要 --- */
         .company { background-color: #333; color: #ccc; padding: 40px 0; font-size: 0.9rem; }
         .company h3 { color: #fff; margin-bottom: 15px; }
+        .company-info { line-height: 1.8; }
 
-        /* --- 固定フッターボタン（スマホ用） --- */
-        .fixed-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--accent-color);
-            text-align: center;
-            padding: 15px 0;
-            z-index: 999;
-        }
-        .fixed-footer a {
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: block;
+        /* --- スマホ調整 --- */
+        @media (max-width: 768px) {
+            .section-title { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -167,16 +125,9 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <p>大東建託の物件にお住まいを検討中のあなたへ</p>
-            <h1>同じ物件なのにここまで下がる！<br>
-                <span class="highlight">初期費用 平均10万円削減</span>
-            </h1>
-            <p>当サービスを経由するだけで、仲介手数料などが大幅にお得になります。</p>
-            <a href="#contact" class="btn-gold">無料見積もりを依頼する</a>
-        </div>
-    </section>
+    <div class="main-visual">
+        <img src="main-visual.jpg" alt="スマートに借りる。初期費用平均10万円削除">
+    </div>
 
     <section class="merit">
         <div class="container text-center">
@@ -194,7 +145,7 @@
         </div>
     </section>
 
-    <section class="flow">
+    <section class="reason">
         <div class="container">
             <h2 class="section-title text-center">ご利用の流れ</h2>
             <div class="step">
@@ -216,13 +167,14 @@
         </div>
     </section>
 
-    <section id="contact" class="reason text-center">
+    <section id="contact" class="merit text-center">
         <div class="container">
             <h2 class="section-title">まずは安くなるか確認！</h2>
             <p>「この物件はいくらになりますか？」とお気軽にご連絡ください。<br>
             しつこい営業は一切いたしません。</p>
             
-            <a href="https://lin.ee/53aOmJV" class="btn-gold">LINEで問い合わせる（無料）</a>
+            <a href="https://line.me/ja/" class="btn-gold">LINEで問い合わせる（無料）</a>
+            
             <p style="margin-top:10px; font-size:0.8rem;">※24時間受付中</p>
         </div>
     </section>
@@ -230,10 +182,9 @@
     <footer class="company">
         <div class="container text-center">
             <h3>運営者情報</h3>
-            <p>
+            <p class="company-info">
                 屋号/会社名：株式会社LAVISH<br>
-                代表者名：西口飛河<br>
-                所在地：大阪市中央区南船場1丁目16-23<br>
+                運営責任者：小川 裕介<br> 所在地：大阪市中央区南船場1丁目16-23<br>
                 免許番号：大阪府知事（1）64799<br>
                 連絡先：info@lavish-corp.com
             </p>
