@@ -50,8 +50,9 @@
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 8px; /* 角を少し丸くして優しく */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ほんのり影をつけて浮き上がらせる */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 0 auto; /* 中央寄せ */
         }
 
         /* --- LINEボタン（緑） --- */
@@ -104,6 +105,17 @@
         .section-white { background-color: var(--white); padding: 40px 0; }
         .section-gray { background-color: #f0f4f8; padding: 40px 0; }
 
+        /* --- メリットBOX（なぜ安くなるの？） --- */
+        .merit-box {
+            background: #fff;
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .merit-text { font-size: 1.2rem; font-weight: bold; }
+
         /* --- 会社概要 --- */
         .company { background-color: #333; color: #ccc; padding: 40px 0; font-size: 0.9rem; }
         .company h3 { color: #fff; margin-bottom: 15px; }
@@ -113,7 +125,7 @@
         @media (max-width: 768px) {
             .section-title { font-size: 1.5rem; }
             .btn-line { width: 80%; padding: 15px 0; }
-            .container { width: 95%; } /* スマホでは画像を大きく見せる */
+            .container { width: 95%; } 
         }
     </style>
 </head>
@@ -121,7 +133,7 @@
 
     <header>
         <div class="container text-center">
-            <div class="logo">大東建託物件を専門に仲介</div>
+            <div class="logo">大東建託物件専門の不動産会社</div>
         </div>
     </header>
 
@@ -131,20 +143,38 @@
 
     <section class="section-white">
         <div class="container text-center">
-            <img src="visual2.png" alt="当社に向いている人" class="lp-image">
+            <h2 class="section-title">なぜ安くなるの？</h2>
+            <p>仕組みはシンプルです。</p>
+            
+            <div class="merit-box">
+                <p class="merit-text">「大東建託物件」に特化<br>しているからこそ実現できる初期費用</p>
+                <p style="margin-top:15px; font-size:0.9rem; text-align:left;">
+                    通常の不動産屋さんは、広告費や店舗の維持費に多額のコストをかけています。<br>
+                    私たちは「大東建託物件」に特化することで業務量とコストを圧倒的に削減<br>
+                    契約手続きのサポートに専念することでお客様の費用ご負担を軽減します
+                </p>
+            </div>
         </div>
     </section>
 
     <section class="section-gray">
         <div class="container text-center">
+            <h2 class="section-title">こんな方におすすめ</h2>
+            <img src="visual2.png" alt="当社に向いている人" class="lp-image">
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container text-center">
+            <h2 class="section-title">ご利用の流れ</h2>
              <img src="visual3.jpg" alt="契約の流れ" class="lp-image">
         </div>
     </section>
 
-    <section id="contact" class="section-white text-center">
+    <section id="contact" class="section-gray text-center">
         <div class="container">
             <h2 class="section-title">まずは安くなるか確認！</h2>
-            <p>LINE公式から見積もりを依頼してください。<br>
+            <p>「この物件はいくらになりますか？」とお気軽にご連絡ください。<br>
             しつこい営業は一切いたしません。</p>
             
             <a href="https://lin.ee/6dwYhc3" class="btn-line">LINEで問い合わせる（無料）</a>
