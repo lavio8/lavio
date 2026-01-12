@@ -17,10 +17,11 @@
         }
         a { text-decoration: none; }
         
-        /* --- カラー設定（LINE風に変更） --- */
+        /* --- カラー設定（ベースは元のネイビー＆ゴールド） --- */
         :root {
-            --main-color: #06c755; /* LINEグリーン（文字色など） */
-            --accent-color: #06c755; /* LINEグリーン（ボタン背景・強調など） */
+            --main-color: #0d2538; /* 信頼のネイビー */
+            --accent-color: #d4af37; /* 高級感・金銭メリットのゴールド */
+            --line-green: #06c755; /* LINE公式カラー */
             --white: #ffffff;
             --text-color: #333333;
         }
@@ -33,31 +34,34 @@
             padding: 20px 0;
         }
         .text-center { text-align: center; }
+        
+        /* 見出し（ゴールドの下線） */
         .section-title {
             font-size: 1.8rem;
-            color: var(--text-color); /* タイトル文字は黒にして読みやすく */
+            color: var(--main-color);
             margin-bottom: 30px;
-            border-bottom: 3px solid var(--accent-color); /* 下線はグリーン */
+            border-bottom: 3px solid var(--accent-color);
             display: inline-block;
             padding-bottom: 10px;
         }
-        /* ボタンのデザイン（LINE風） */
+
+        /* ★ここだけ変更：LINE風ボタン★ */
         .btn-line {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--line-green); /* ここを緑に！ */
             color: var(--white);
             font-size: 1.2rem;
             font-weight: bold;
-            padding: 15px 50px; /* 少し横長にして押しやすく */
+            padding: 15px 50px;
             border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3); /* グリーンの影 */
+            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.4); /* 影も緑っぽく */
             transition: 0.3s;
             margin-top: 20px;
         }
         .btn-line:hover {
             opacity: 0.9;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(6, 199, 85, 0.4);
+            box-shadow: 0 6px 15px rgba(6, 199, 85, 0.5);
         }
 
         /* --- ヘッダー --- */
@@ -72,7 +76,7 @@
         header .logo {
             font-size: 1.2rem;
             font-weight: bold;
-            color: var(--main-color); /* ロゴもグリーンに */
+            color: var(--main-color);
         }
 
         /* --- メインビジュアル（画像） --- */
@@ -91,24 +95,22 @@
         .merit { background-color: var(--white); padding: 60px 0; }
         .merit-box {
             background: #fff;
-            border: 2px solid var(--accent-color); /* 枠線をグリーンに */
+            border: 2px solid var(--accent-color); /* 枠はゴールドのまま */
             border-radius: 10px;
             padding: 30px;
             margin-top: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .merit-text { font-size: 1.2rem; font-weight: bold; color: var(--main-color); }
+        .merit-text { font-size: 1.2rem; font-weight: bold; }
 
         /* --- 仕組み --- */
         .reason { background-color: #f0f4f8; padding: 60px 0; }
         .step {
             background: #f9f9f9;
-            padding: 20px;
+            padding: 15px;
             margin-bottom: 15px;
-            border-left: 6px solid var(--main-color); /* 左線を太めのグリーンに */
-            border-radius: 0 8px 8px 0;
+            border-left: 5px solid var(--main-color); /* 左線はネイビーのまま */
         }
-        .step h3 { color: var(--main-color); margin-top: 0; }
 
         /* --- 会社概要 --- */
         .company { background-color: #333; color: #ccc; padding: 40px 0; font-size: 0.9rem; }
@@ -118,7 +120,7 @@
         /* --- スマホ調整 --- */
         @media (max-width: 768px) {
             .section-title { font-size: 1.5rem; }
-            .btn-line { width: 80%; padding: 15px 0; } /* スマホでボタンを大きく */
+            .btn-line { width: 80%; padding: 15px 0; }
         }
     </style>
 </head>
@@ -141,7 +143,7 @@
             
             <div class="merit-box">
                 <p class="merit-text">「大東建託物件」に特化<br>しているからこそ実現できる初期費用</p>
-                <p style="margin-top:15px; font-size:0.9rem; text-align:left; color:#333;">
+                <p style="margin-top:15px; font-size:0.9rem; text-align:left;">
                     通常の不動産屋さんは、広告費や店舗の維持費に多額のコストをかけています。<br>
                     私たちは「大東建託物件」に特化することで業務量とコストを圧倒的に削減<br>
                     契約手続きのサポートに専念することでお客様の費用ご負担を軽減します
@@ -185,14 +187,4 @@
             <h3>運営者情報</h3>
             <p class="company-info">
                 屋号/会社名：株式会社LAVISH<br>
-                運営責任者：小川 裕介<br> 
-                所在地：大阪市中央区南船場1丁目16-23<br>
-                免許番号：大阪府知事（1）64799<br>
-                連絡先：info@lavish-corp.com
-            </p>
-            <p style="margin-top:20px;">&copy; 2024 Daito Cost Cut Support.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                運営責任者：小川 裕介<br>
