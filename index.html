@@ -3,205 +3,975 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大東建託物件の初期費用を下げたいなら</title>
-    <meta name="description" content="大東建託の物件を借りたい方必見。当サービス経由なら初期費用が平均10万円安くなります。お見積り無料。">
+    <title>大東建託 DK SELECT物件の初期費用を安くするなら｜らびお</title>
+    <meta name="description" content="大東建託のDK SELECT物件を借りたい方へ。大東建託直営店や一般の不動産会社と比べて初期費用が平均10万円安くなるサービスです。LINEで簡易見積もりを無料で確認できます。">
+    <meta property="og:title" content="大東建託 DK SELECT物件の初期費用を安くするなら">
+    <meta property="og:description" content="大東建託直営店や一般の不動産会社と比べて、初期費用が平均10万円安くなる。DK SELECT物件専門のかんたん比較。">
+    <meta property="og:image" content="main-visual.png">
+    <meta property="og:type" content="website">
     <style>
-        /* --- 基本設定 --- */
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        a { text-decoration: none; }
-        
-        /* --- カラー設定 --- */
         :root {
-            --main-color: #0d2538; /* 信頼のネイビー */
-            --accent-color: #d4af37; /* 高級感・金銭メリットのゴールド */
-            --line-green: #06c755; /* LINE公式カラー（ボタン専用） */
-            --white: #ffffff;
-            --text-color: #333333;
+            --navy: #0d2538;
+            --navy-2: #123553;
+            --gold: #c9a227;
+            --line: #06c755;
+            --red: #c90000;
+            --ink: #202733;
+            --muted: #647083;
+            --paper: #ffffff;
+            --soft: #f4f7fb;
+            --line-soft: #e8f8ef;
+            --border: #dfe6ef;
         }
 
-        /* --- 共通クラス --- */
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-        .text-center { text-align: center; }
-        
-        /* 見出し（ゴールドの下線） */
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--main-color);
-            margin-bottom: 30px;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 10px;
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.65;
+            background: var(--paper);
         }
 
-        /* --- 画像のスタイル調整 --- */
-        .lp-image {
-            width: 100%;
-            height: auto;
+        a { color: inherit; text-decoration: none; }
+
+        img {
             display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin: 0 auto; /* 中央寄せ */
+            max-width: 100%;
+            height: auto;
         }
 
-        /* --- LINEボタン（緑） --- */
-        .btn-line {
-            display: inline-block;
-            background-color: var(--line-green);
-            color: var(--white);
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 15px 50px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.4);
-            transition: 0.3s;
-            margin-top: 30px;
-        }
-        .btn-line:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(6, 199, 85, 0.5);
+        .container {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
         }
 
-        /* --- ヘッダー --- */
-        header {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .site-header {
             position: sticky;
             top: 0;
-            z-index: 100;
-        }
-        header .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--main-color);
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
 
-        /* --- メインビジュアル --- */
-        .main-visual {
-            width: 100%;
-            background-color: #fff;
-            line-height: 0;
+        .header-inner {
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
         }
-        .main-visual img {
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            color: var(--navy);
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .brand small {
+            color: var(--muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.9rem;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .header-nav a:not(.mini-cta) {
+            color: var(--navy);
+        }
+
+        .mini-cta,
+        .btn-line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            border-radius: 999px;
+            background: var(--line);
+            color: #fff;
+            font-weight: 800;
+            box-shadow: 0 10px 22px rgba(6, 199, 85, 0.24);
+        }
+
+        .mini-cta {
+            min-height: 40px;
+            padding: 0 18px;
+            font-size: 0.9rem;
+        }
+
+        .hero {
+            background: var(--paper);
+        }
+
+        .hero-image {
             width: 100%;
-            height: auto;
+            max-height: 660px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-summary {
+            margin-top: -1px;
+            background: linear-gradient(135deg, var(--navy), var(--navy-2));
+            color: #fff;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 28px;
+            align-items: center;
+            padding: 28px 0;
+        }
+
+        .summary-copy h1 {
+            margin: 0 0 10px;
+            font-size: clamp(1.45rem, 4vw, 2.25rem);
+            line-height: 1.25;
+            letter-spacing: 0;
+        }
+
+        .summary-copy p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 1rem;
+        }
+
+        .quick-points {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .quick-point {
+            min-height: 92px;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+        }
+
+        .quick-point strong {
             display: block;
+            font-size: 1.45rem;
+            line-height: 1.1;
+            color: #fff;
         }
 
-        /* --- コンテンツエリア背景 --- */
-        .section-white { background-color: var(--white); padding: 40px 0; }
-        .section-gray { background-color: #f0f4f8; padding: 40px 0; }
+        .quick-point span {
+            display: block;
+            margin-top: 6px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.82rem;
+        }
 
-        /* --- メリットBOX（なぜ安くなるの？） --- */
-        .merit-box {
+        .savings-strip {
+            border-bottom: 1px solid #f0dca5;
+            background: #fff8e7;
+        }
+
+        .savings-inner {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 18px;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .savings-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            min-height: 42px;
+            padding: 0 16px;
+            border-radius: 999px;
+            background: var(--red);
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .savings-copy {
+            margin: 0;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .savings-copy span {
+            color: var(--red);
+            font-size: 1.18em;
+        }
+
+        .section {
+            padding: 64px 0;
+        }
+
+        .section.soft {
+            background: var(--soft);
+        }
+
+        .section-head {
+            margin: 0 auto 28px;
+            max-width: 760px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            margin: 0 0 8px;
+            color: var(--gold);
+            font-size: 0.82rem;
+            font-weight: 900;
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--navy);
+            font-size: clamp(1.55rem, 4vw, 2.2rem);
+            line-height: 1.3;
+            letter-spacing: 0;
+        }
+
+        .lead {
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .btn-line {
+            width: min(100%, 420px);
+            padding: 0 24px;
+            font-size: 1.1rem;
+        }
+
+        .cta-note {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .cta-block {
+            margin-top: 28px;
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .greeting {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 34px;
+            align-items: center;
+        }
+
+        .portrait {
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border);
             background: #fff;
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 30px;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 16px 36px rgba(13, 37, 56, 0.12);
         }
-        .merit-text { font-size: 1.2rem; font-weight: bold; }
 
-        /* --- 会社概要 --- */
-        .company { background-color: #333; color: #ccc; padding: 40px 0; font-size: 0.9rem; }
-        .company h3 { color: #fff; margin-bottom: 15px; }
-        .company-info { line-height: 1.8; }
+        .portrait img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
 
-        /* --- スマホ調整 --- */
-        @media (max-width: 768px) {
-            .section-title { font-size: 1.5rem; }
-            .btn-line { width: 80%; padding: 15px 0; }
-            .container { width: 95%; } 
+        .signature {
+            padding: 16px 18px;
+            border-top: 1px solid var(--border);
+        }
+
+        .signature strong {
+            display: block;
+            color: var(--navy);
+            font-size: 1.05rem;
+        }
+
+        .signature span {
+            display: block;
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .message {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .message h2 {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .message p {
+            margin: 0 0 14px;
+            color: #3c4656;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .message-emphasis {
+            margin: 22px 0;
+            padding: 18px 20px;
+            border-left: 4px solid var(--gold);
+            background: #fbf8ef;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .card {
+            min-height: 190px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .card-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .card h3 {
+            margin: 14px 0 8px;
+            color: var(--navy);
+            font-size: 1.12rem;
+            line-height: 1.35;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .compare {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .saving-panel {
+            margin-bottom: 22px;
+            padding: 24px;
+            border-radius: 8px;
+            background: var(--navy);
+            color: #fff;
+            text-align: center;
+        }
+
+        .saving-panel strong {
+            display: block;
+            color: #fff;
+            font-size: clamp(2.2rem, 7vw, 4.2rem);
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .saving-panel p {
+            margin: 12px 0 0;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .compare-row:last-child {
+            border-bottom: 0;
+        }
+
+        .compare-cell {
+            padding: 22px;
+        }
+
+        .compare-cell + .compare-cell {
+            border-left: 1px solid var(--border);
+        }
+
+        .compare-cell h3 {
+            margin: 0 0 12px;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+
+        .compare-cell ul {
+            margin: 0;
+            padding-left: 1.2em;
+            color: var(--muted);
+        }
+
+        .rabio {
+            background: #fff7f9;
+        }
+
+        .rabio h3,
+        .rabio strong {
+            color: #d8214c;
+        }
+
+        .image-band {
+            margin-top: 32px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(13, 37, 56, 0.08);
+        }
+
+        .target-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .target-panel {
+            padding: 26px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff;
+        }
+
+        .target-panel.ok {
+            border-color: rgba(6, 199, 85, 0.35);
+            background: var(--line-soft);
+        }
+
+        .target-panel h3 {
+            margin: 0 0 12px;
+            color: var(--navy);
+            font-size: 1.2rem;
+        }
+
+        .target-panel ul {
+            margin: 0;
+            padding-left: 1.2em;
+            color: var(--muted);
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .flow-step {
+            padding: 20px;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid var(--border);
+        }
+
+        .flow-step strong {
+            display: block;
+            color: var(--gold);
+            font-size: 0.84rem;
+        }
+
+        .flow-step h3 {
+            margin: 8px 0 8px;
+            color: var(--navy);
+            font-size: 1rem;
+            line-height: 1.35;
+        }
+
+        .flow-step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .faq {
+            display: grid;
+            gap: 12px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        details {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fff;
+            padding: 18px 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        details p {
+            margin: 12px 0 0;
+            color: var(--muted);
+        }
+
+        .final-cta {
+            color: #fff;
+            background: linear-gradient(135deg, var(--navy), #1b4568);
+        }
+
+        .final-cta h2 {
+            color: #fff;
+        }
+
+        .final-cta .lead,
+        .final-cta .cta-note {
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        footer {
+            padding: 42px 0 86px;
+            color: #cbd3dc;
+            background: #202733;
+            font-size: 0.9rem;
+        }
+
+        footer h2 {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .company-info {
+            margin: 14px 0 0;
+        }
+
+        .fixed-cta {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 30;
+            padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+            background: rgba(255, 255, 255, 0.94);
+            border-top: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+
+        .fixed-cta a {
+            width: 100%;
+            min-height: 48px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 880px) {
+            .header-nav a:not(.mini-cta) {
+                display: none;
+            }
+
+            .summary-grid,
+            .greeting,
+            .target-box {
+                grid-template-columns: 1fr;
+            }
+
+            .savings-inner {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .quick-points,
+            .cards,
+            .flow {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-row {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-cell + .compare-cell {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+            }
+
+            .hero-image {
+                min-height: 0;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            .hero {
+                padding-top: 0;
+            }
+
+            .hero picture {
+                display: block;
+                overflow: hidden;
+                background: #eef3f6;
+            }
+
+            .hero picture img {
+                width: 100%;
+                max-width: 100%;
+                margin-left: 0;
+            }
+
+            .section {
+                padding: 48px 0;
+            }
+
+            .fixed-cta {
+                display: block;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: min(100% - 24px, 1120px);
+            }
+
+            .brand {
+                font-size: 0.95rem;
+            }
+
+            .mini-cta {
+                min-height: 38px;
+                padding: 0 14px;
+                font-size: 0.82rem;
+            }
+
+            .hero-image {
+                min-height: 0;
+                object-position: center;
+            }
+
+            .summary-grid {
+                gap: 18px;
+                padding: 24px 0;
+            }
+
+            .quick-point {
+                min-height: auto;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container text-center">
-            <div class="logo">大東建託物件専門の仲介</div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="らびお">
+                大東建託 DK SELECT専門
+                <small>初期費用のかんたん比較</small>
+            </a>
+            <nav class="header-nav" aria-label="ページ内ナビゲーション">
+                <a href="#reason">安くなる理由</a>
+                <a href="#target">対象物件</a>
+                <a href="#flow">流れ</a>
+                <a class="mini-cta" href="https://lin.ee/9pHyNEU">LINEで無料見積もり</a>
+            </nav>
         </div>
     </header>
 
-    <div class="main-visual">
-        <img src="main-visual.png" alt="スマートに借りる。初期費用平均10万円削除">
-    </div>
-
-    <section class="section-white">
-        <div class="container text-center">
-            <h2 class="section-title">なぜ安くなるの？</h2>
-            <p>仕組みはシンプルです。</p>
-            
-            <div class="merit-box">
-                <p class="merit-text">「大東建託物件」に特化<br>しているからこそ実現できる初期費用</p>
-                <p style="margin-top:15px; font-size:0.9rem; text-align:left;">
-                    通常の不動産屋さんは、広告費や人件費、店舗の維持費に多額のコストをかけています。<br>
-                    私たちは「大東建託物件」に特化することで業務量とコストを圧倒的に削減。<br>
-                    契約手続きのサポートに専念することでお客様の費用ご負担を軽減します。
-                </p>
+    <main id="top">
+        <section class="hero" aria-label="大東建託物件の初期費用削減">
+            <picture>
+                <source srcset="main-visual.webp" type="image/webp">
+                <img class="hero-image" src="main-visual.png" alt="スマートに借りる。初期費用平均10万円削減">
+            </picture>
+            <div class="hero-summary">
+                <div class="container summary-grid">
+                    <div class="summary-copy">
+                        <h1>大東建託直営店や一般の不動産会社と比べて、初期費用を平均10万円削減。</h1>
+                        <p>大東建託物件に特化した仲介サービスです。物件提案や内見同行を省き、申し込み前後の見積もり確認と契約手続きのサポートに集中します。</p>
+                    </div>
+                    <div class="quick-points" aria-label="特徴">
+                        <div class="quick-point">
+                            <strong>平均10万円</strong>
+                            <span>初期費用を削減</span>
+                        </div>
+                        <div class="quick-point">
+                            <strong>専門</strong>
+                            <span>DK SELECT物件に対応</span>
+                        </div>
+                        <div class="quick-point">
+                            <strong>営業なし</strong>
+                            <span>こちらから物件提案しません</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <a href="https://lin.ee/6dwYhc3" class="btn-line">LINEで見積もり依頼</a>
-            <p style="margin-top:8px; font-size:0.8rem; color:#666;">※「LINEアプリを開く」ボタンを長押ししてください</p>
-
+        <div class="savings-strip" aria-label="初期費用削減の訴求">
+            <div class="container savings-inner">
+                <div class="savings-badge">平均10万円削減</div>
+                <p class="savings-copy">大東建託直営店・一般の不動産会社と比べて、<span>仲介手数料と任意オプション</span>を中心に初期費用を抑えます。</p>
+                <a class="mini-cta" href="https://lin.ee/9pHyNEU">LINEで確認</a>
+            </div>
         </div>
-    </section>
 
-    <section class="section-gray">
-        <div class="container text-center">
-            <h2 class="section-title">こんな方におすすめ</h2>
-            <img src="visual2.png" alt="当社に向いている人" class="lp-image">
-        </div>
-    </section>
+        <section class="section soft" id="message">
+            <div class="container greeting">
+                <div class="portrait">
+                    <picture>
+                        <source srcset="representative-ogawa.webp" type="image/webp">
+                        <img src="representative-ogawa.png" alt="らびお運営者 小川裕介">
+                    </picture>
+                    <div class="signature">
+                        <strong>小川 裕介</strong>
+                        <span>株式会社LAVISH / 宅地建物取引士</span>
+                    </div>
+                </div>
+                <div class="message">
+                    <p class="eyebrow">MESSAGE</p>
+                    <h2>なぜ、大東建託物件専門の仲介を始めたのか。</h2>
+                    <p>はじめまして。らびおを運営している小川です。</p>
+                    <p>私は大東建託の現場で長く店舗責任者として勤務し、多くの契約、入居手続き、初期費用のご相談に携わってきました。</p>
+                    <p>大東建託物件は全国に130万戸以上あり、国民の55人に1人が住んでいるとも言われています。毎日、約75秒に1人が新しく契約しているほど、多くの方に選ばれている賃貸住宅です。</p>
+                    <p>しかし、その多くの方が、仲介手数料や任意オプションを含めた「満額プラスα」の初期費用を支払って契約しているのも現実です。</p>
+                    <p>私は大東建託物件の客づけに長く携わってきた者として、もっとリーズナブルに、もっと簡単に借りていただける方法があっていいと考えるようになりました。</p>
+                    <p>大東建託物件は知名度があり、設備や管理面でも安心感があるため、仲介業者にとって成約しやすい物件です。</p>
+                    <p>一方で、貸主側から仲介会社へ支払われる手数料が少ないケースもあり、一般の不動産会社から見ると利益につながりにくい物件になりやすい現実があります。</p>
+                    <p>その結果、大東建託物件ではなく他社物件をすすめられたり、大東建託物件で進める場合でも仲介手数料の値引きが難しかったり、任意オプションが上乗せされたりすることがあります。</p>
+                    <div class="message-emphasis">だから私は、大東建託物件に特化し、初期費用をできるだけ抑えて契約できる専門窓口を作りました。</div>
+                    <p>物件提案や内見同行は行いません。その代わり、すでに大東建託物件を検討している方に絞り、仲介手数料を抑え、不要な任意オプションを入れない形で、初期費用をわかりやすく比較します。</p>
+                    <p>「この物件で進めたい。でも初期費用はできるだけ抑えたい」そんな方のお役に立てるサービスを目指しています。</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="section-white">
-        <div class="container text-center">
-            <h2 class="section-title">ご利用の流れ</h2>
-             <img src="visual3.png" alt="契約の流れ" class="lp-image">
-        </div>
-    </section>
+        <section class="section" id="reason">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">WHY CHEAPER</p>
+                    <h2>安くなる理由は、やることを絞っているから。</h2>
+                    <p class="lead">らびおは「大東建託のDK SELECT物件を、すでに検討している方」のためのサービスです。物件探しや内見同行を行わない分、初期費用を抑える提案に集中できます。</p>
+                </div>
 
-    <section id="contact" class="section-gray text-center">
+                <div class="cards">
+                    <div class="card">
+                        <span class="card-number">1</span>
+                        <h3>大東建託物件に特化</h3>
+                        <p>DK SELECT物件の費用項目や申込の流れに絞って確認します。広く浅くではなく、対象を限定しています。</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-number">2</span>
+                        <h3>物件提案・内見同行なし</h3>
+                        <p>全国対応のため、物件紹介や現地案内は行いません。お客様が決めた物件の見積もり比較に特化します。</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-number">3</span>
+                        <h3>不要なオプションなし</h3>
+                        <p>各種任意オプションや取次サービスを前提にせず、必要な費用をわかりやすく比較します。</p>
+                    </div>
+                </div>
+
+                <div class="cta-block">
+                    <a class="btn-line" href="https://lin.ee/9pHyNEU">LINEで無料見積もりを依頼する</a>
+                    <p class="cta-note">検討中の大東建託物件情報を送ってください。こちらから営業はいたしません。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">COST COMPARISON</p>
+                    <h2>同じ大東建託物件でも、申し込み窓口で初期費用に差が出ます。</h2>
+                    <p class="lead">大きな差が出やすいのは、仲介手数料と任意オプションです。らびおでは、大東建託直営店や一般の不動産会社と比べて、平均で約10万円安い初期費用を目指します。</p>
+                </div>
+
+                <div class="saving-panel">
+                    <strong>平均10万円削減</strong>
+                    <p>仲介手数料を抑え、各種任意オプションや取次サービスを前提にしないことで、初期費用を大きく下げます。</p>
+                </div>
+
+                <div class="compare" aria-label="費用比較">
+                    <div class="compare-row">
+                        <div class="compare-cell">
+                            <h3>大東建託直営店・一般の不動産会社で申し込んだ場合</h3>
+                            <ul>
+                                <li>仲介手数料は賃料1ヶ月分が目安</li>
+                                <li>任意オプションが追加される場合あり</li>
+                                <li>ウォーターサーバーやインターネットなどの取次提案がある場合あり</li>
+                                <li>引越し業者などの指定・紹介がある場合あり</li>
+                            </ul>
+                        </div>
+                        <div class="compare-cell rabio">
+                            <h3>らびおで申し込んだ場合</h3>
+                            <ul>
+                                <li><strong>仲介手数料は賃料30%が目安</strong></li>
+                                <li>仲介手数料の税込上限は33,000円</li>
+                                <li>任意オプションは入れません</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-band">
+                    <picture>
+                        <source srcset="visual2.webp" type="image/webp">
+                        <img src="visual2.png" alt="当社に向いている人">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="target">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">TARGET</p>
+                    <h2>対象は、大東建託のDK SELECT物件です。</h2>
+                    <p class="lead">検討中の物件情報をLINEでお送りください。正確な条件確認のため、物件ページURLがあるとスムーズです。</p>
+                </div>
+
+                <div class="target-box">
+                    <div class="target-panel ok">
+                        <h3>対象になる物件</h3>
+                        <ul>
+                            <li>ページ内にDK SELECT表記がある</li>
+                            <li>借りたい物件がほぼ決まっている</li>
+                            <li>物件URLや資料で物件を特定できる</li>
+                        </ul>
+                    </div>
+                    <div class="target-panel">
+                        <h3>対象外・確認が必要な物件</h3>
+                        <ul>
+                            <li>DK SELECT表記が確認できない物件</li>
+                            <li>物件探しや内見同行を希望される場合</li>
+                            <li>物件名や所在地が確認できない場合</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft" id="flow">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">FLOW</p>
+                    <h2>LINEで物件情報を送るだけ。まずは簡易見積もりから。</h2>
+                    <p class="lead">自動返信で一次対応します。正式な空き状況、駐車場、ご契約開始日は後ほどらびおが確認します。</p>
+                </div>
+
+                <div class="flow">
+                    <div class="flow-step">
+                        <strong>STEP 1</strong>
+                        <h3>借りたい物件を決める</h3>
+                        <p>大東建託物件で「この物件で進めたい」という状態にします。</p>
+                    </div>
+                    <div class="flow-step">
+                        <strong>STEP 2</strong>
+                        <h3>LINEで物件情報を送る</h3>
+                        <p>物件URLやスクショなど、物件が特定できる情報を送ります。</p>
+                    </div>
+                    <div class="flow-step">
+                        <strong>STEP 3</strong>
+                        <h3>簡易見積もりを確認</h3>
+                        <p>月初入居、駐車場1台前提の概算比較をお送りします。</p>
+                    </div>
+                    <div class="flow-step">
+                        <strong>STEP 4</strong>
+                        <h3>進める場合は申し込みへ</h3>
+                        <p>正式条件を確認し、問題なければ申込手続きへ進みます。</p>
+                    </div>
+                </div>
+
+                <div class="image-band">
+                    <picture>
+                        <source srcset="visual3.webp" type="image/webp">
+                        <img src="visual3.png" alt="契約の流れ">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">FAQ</p>
+                    <h2>よくある質問</h2>
+                </div>
+
+                <div class="faq">
+                    <details>
+                        <summary>SUUMOやHOME'SのURLでも見積もりできますか？</summary>
+                        <p>SUUMOやHOME'SのURLでも見積もり確認は可能ですが、物件特定や条件確認にお時間がかかる場合があります。いい部屋ネットの物件URLをお送りいただければ、AIによる簡易見積もりをすぐにお送りできます。</p>
+                    </details>
+                    <details>
+                        <summary>申込済みでも見積もりできますか？</summary>
+                        <p>見積もり確認自体は可能です。ただし、すでに他社で申し込みが進んでいる場合、変更できるかどうかは状況確認が必要です。</p>
+                    </details>
+                    <details>
+                        <summary>すぐ入居できる物件を先の日程で契約できますか？</summary>
+                        <p>即入居可能物件は、申し込みから14日以内を目安に契約開始を求められることがあります。交渉できる場合もありますが、物件ごとの確認が必要です。</p>
+                    </details>
+                    <details>
+                        <summary>駐車場の空きも確認できますか？</summary>
+                        <p>簡易見積もりでは駐車場1台前提で計算します。実際の空き状況は、後ほどらびおが管理会社へ確認します。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section final-cta" id="contact">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">FREE ESTIMATE</p>
+                    <h2>まずは、検討中の大東建託物件をLINEで送ってください。</h2>
+                    <p class="lead">DK SELECT物件か確認し、対象物件であれば初期費用の簡易見積もりをお送りします。</p>
+                    <div class="cta-block">
+                        <a class="btn-line" href="https://lin.ee/9pHyNEU">LINEで問い合わせる</a>
+                        <p class="cta-note">24時間受付中。こちらから営業はいたしません。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h2 class="section-title">まずは安くなるか確認！</h2>
-            <p>LINE公式を追加して「見積もり依頼」ボタンを押してください<br>
-            こちらから営業はいたしません。</p>
-            
-            <a href="https://lin.ee/6dwYhc3" class="btn-line">LINEで問い合わせる（無料）</a>
-            
-            <p style="margin-top:8px; font-size:0.8rem; color:#666;">※「LINEアプリを開く」ボタンを長押ししてください</p>
-            
-            <p style="margin-top:5px; font-size:0.8rem;">※24時間受付中</p>
-        </div>
-    </section>
-
-    <footer class="company">
-        <div class="container text-center">
-            <h3>運営者情報</h3>
+            <h2>運営者情報</h2>
             <p class="company-info">
                 免許番号：大阪府知事（1）64799<br>
                 株式会社LAVISH<br>
-                運営責任者：小川 裕介<br> 
+                運営責任者：小川 裕介<br>
                 所在地：大阪市中央区南船場1丁目16-23<br>
                 連絡先：info@lavish-corp.com
             </p>
-            <p style="margin-top:20px;">&copy; 2024 Lavio.</p>
+            <p class="company-info">&copy; 2026 Lavio.</p>
         </div>
     </footer>
 
+    <div class="fixed-cta" aria-label="固定問い合わせボタン">
+        <a class="btn-line" href="https://lin.ee/9pHyNEU">LINEで無料見積もり</a>
+    </div>
 </body>
 </html>
