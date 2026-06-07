@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大東建託つぶやき型投稿ネタ100本</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13283a;
+      --muted: #637083;
+      --line: #d9e1ea;
+      --paper: #f6f8fb;
+      --card: #ffffff;
+      --gold: #b58a2a;
+      --green: #06c755;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+    header {
+      padding: 20px 16px 14px;
+      background: #0f2b43;
+      color: #fff;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 0;
+      color: #d7e2ec;
+      font-size: 14px;
+    }
+    .tools {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 10px 12px;
+      background: rgba(246, 248, 251, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    input {
+      width: 100%;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      font-size: 16px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-top: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .tab.active {
+      border-color: #0f2b43;
+      background: #0f2b43;
+      color: #fff;
+    }
+    main {
+      padding: 14px 12px 40px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .count {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .card {
+      margin: 0 0 10px;
+      padding: 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .category {
+      color: var(--gold);
+    }
+    .text {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+    .bg {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .copy {
+      width: 100%;
+      height: 40px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .empty {
+      padding: 24px 14px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>大東建託つぶやき型投稿ネタ100本</h1>
+    <p class="lead">スマホで見ながら、今日の投稿文を選ぶための一覧です。</p>
+  </header>
+  <section class="tools">
+    <input id="search" type="search" placeholder="キーワード検索">
+    <div class="tabs" id="tabs"></div>
+  </section>
+  <main>
+    <p class="count" id="count"></p>
+    <section id="list"></section>
+  </main>
+  <script>
+    const items = [
+      [1,"大東建託あるある","大東建託の物件名、なぜかカタカナ率が高い。","外観"],
+      [2,"大東建託あるある","大東建託の外観って、慣れてくると遠目でもなんとなく分かる。","外観"],
+      [3,"大東建託あるある","大東建託の物件は、外観より共用部分を見ると管理状態が分かりやすい。","共用廊下"],
+      [4,"大東建託あるある","大東建託の2階建てアパート、階段の位置で住み心地がけっこう変わる。","階段"],
+      [5,"大東建託あるある","大東建託の物件は、築年数で雰囲気がかなり変わる。","外壁アップ"],
+      [6,"大東建託あるある","大東建託は嫌われがちだけど、契約の流れはかなり仕組み化されている。","外観"],
+      [7,"大東建託あるある","大東建託の1LDKは、単身でも二人暮らしでも使いやすい間取りが多い。","間取り図"],
+      [8,"大東建託あるある","大東建託の2LDKは、地方だとファミリーよりカップルに刺さることも多い。","外観"],
+      [9,"大東建託あるある","大東建託の新築は、申し込みから契約開始までが意外と早い。","新築外観"],
+      [10,"大東建託あるある","大東建託の物件は、全国どこでも似た流れで契約できるのが強い。","外観"],
+      [11,"大東建託あるある","大東建託物件って、地方ほど駐車場の確認が大事。","駐車場"],
+      [12,"大東建託あるある","大東建託の物件は、家賃だけ見ても判断できない。","外観"],
+      [13,"大東建託あるある","大東建託は建物数が多いから、良い物件もクセのある物件も当然ある。","複数物件外観"],
+      [14,"大東建託あるある","大東建託の物件は、同じ建物でも号室で条件が違うことがある。","玄関ドア"],
+      [15,"大東建託あるある","大東建託の物件、築浅と築古でほぼ別ジャンル。","外観比較"],
+      [16,"大東建託あるある","大東建託のアパートは、外観より駐車場配置を見た方が生活感が分かる。","駐車場"],
+      [17,"大東建託あるある","大東建託の物件は、見慣れると「この年代っぽいな」が分かってくる。","外観"],
+      [18,"大東建託あるある","大東建託の物件は、退去予定中と即入居可で動き方が変わる。","募集看板風"],
+      [19,"大東建託あるある","大東建託の物件は、募集条件が変わることがあるから最新確認が大事。","外観"],
+      [20,"大東建託あるある","大東建託の物件は、名前より所在地と号室で確認した方が安全。","ポスト周り"],
+      [21,"DK SELECT豆知識","いい部屋ネットに載っている物件が、全部DK SELECTとは限らない。","スマホ画面"],
+      [22,"DK SELECT豆知識","DK SELECT表記があるかどうかは、地味だけどかなり大事。","スマホ画面"],
+      [23,"DK SELECT豆知識","大東建託物件を探すなら、まずDK SELECTの表記を見る。","スマホ画面"],
+      [24,"DK SELECT豆知識","DK SELECT物件は、契約の流れが比較的分かりやすい。","外観"],
+      [25,"DK SELECT豆知識","DK SELECTの新しい物件は、設備がかなり今っぽい。","新築外観"],
+      [26,"DK SELECT豆知識","DK SELECT物件でも、駐車場の空きは別確認が必要。","駐車場"],
+      [27,"DK SELECT豆知識","DK SELECT物件でも、契約開始日の交渉は物件ごとに違う。","外観"],
+      [28,"DK SELECT豆知識","DK SELECT物件は、掲載サイトによって条件の見え方が違うことがある。","スマホ画面"],
+      [29,"DK SELECT豆知識","DK SELECT表記がない物件は、見た目が似ていても対象外のことがある。","外観"],
+      [30,"DK SELECT豆知識","DK SELECTかどうかは、物件名だけでは判断できない。","物件名表示"],
+      [31,"DK SELECT豆知識","いい部屋ネットのページを見る時は、家賃より先にDK SELECT表記を見る。","スマホ画面"],
+      [32,"DK SELECT豆知識","DK SELECT物件は、月額費用の内訳まで見ると印象が変わる。","見積もり風画面"],
+      [33,"DK SELECT豆知識","DK SELECTのペット可物件は、保証料やクリーニング費も確認した方がいい。","外観"],
+      [34,"DK SELECT豆知識","DK SELECTの新築は、入居可能日と契約開始日のズレに注意。","新築外観"],
+      [35,"DK SELECT豆知識","DK SELECT物件は、同じ建物内でも部屋ごとに礼金が違うことがある。","玄関ドア"],
+      [36,"DK SELECT豆知識","DK SELECT物件は、駐車場1台目と2台目の確認が地味に大事。","駐車場"],
+      [37,"DK SELECT豆知識","DK SELECT物件は、初期費用より先に月額総額を見た方が冷静になれる。","見積もり風画面"],
+      [38,"DK SELECT豆知識","DK SELECT物件の月額保証料は、駐車場を借りるかで変わることがある。","駐車場"],
+      [39,"DK SELECT豆知識","DK SELECT物件は、町内会費やCATV代が小さくても積み上がる。","共用部"],
+      [40,"DK SELECT豆知識","DK SELECT物件は、条件の細かさを知っている人ほど判断が早い。","外観"],
+      [41,"間取り・設備","サンルーム付き物件は、好きな人と苦手な人がかなり分かれる。","サンルーム外観"],
+      [42,"間取り・設備","ベランダなし物件は、外干し派には向かないことがある。","外観"],
+      [43,"間取り・設備","浴室乾燥があるからといって、洗濯ストレスがゼロとは限らない。","浴室乾燥イメージ"],
+      [44,"間取り・設備","大東建託の1LDKは、LDKの形で使いやすさが大きく変わる。","間取り図"],
+      [45,"間取り・設備","間取り図だけでは、家具の置きやすさは分からない。","室内"],
+      [46,"間取り・設備","洋室の広さより、収納の位置を見た方が生活を想像しやすい。","収納"],
+      [47,"間取り・設備","玄関からリビングまでの動線は、毎日のストレスに直結する。","玄関"],
+      [48,"間取り・設備","キッチン横の冷蔵庫置き場は、意外と見落とされがち。","キッチン"],
+      [49,"間取り・設備","カウンターキッチンは人気だけど、部屋が狭く見えることもある。","キッチン"],
+      [50,"間取り・設備","階段下収納がある物件は、地味に便利。","収納"],
+      [51,"間取り・設備","角部屋っぽく見えても、窓の位置で明るさは変わる。","外観"],
+      [52,"間取り・設備","サンルームは便利だけど、来客時に生活感が出やすい。","サンルーム"],
+      [53,"間取り・設備","LDKの数字だけで広さを判断すると失敗することがある。","間取り図"],
+      [54,"間取り・設備","廊下が少ない間取りは、面積のわりに広く感じやすい。","間取り図"],
+      [55,"間取り・設備","逆に廊下が長い間取りは、面積のわりに狭く感じることがある。","間取り図"],
+      [56,"間取り・設備","新築アパートはきれいだけど、収納量は必ず確認した方がいい。","新築外観"],
+      [57,"間取り・設備","宅配ボックスは、あるだけで生活の満足度が上がる。","宅配ボックス"],
+      [58,"間取り・設備","追い焚き付きかどうかは、二人暮らしではかなり大事。","浴室"],
+      [59,"間取り・設備","エアコンの台数は、初期費用より生活費に関わる。","室内"],
+      [60,"間取り・設備","大東建託の間取りは、時代ごとの流行がかなり出る。","間取り図"],
+      [61,"駐車場・共用部","駐車場2台希望の人は、部屋より先に駐車場を確認した方がいい。","駐車場"],
+      [62,"駐車場・共用部","駐車場の区画が狭い物件は、毎朝ちょっとストレスになる。","駐車区画"],
+      [63,"駐車場・共用部","駐車場の出入り口が狭い物件は、現地で見ないと分かりにくい。","駐車場入口"],
+      [64,"駐車場・共用部","駐車場が部屋の前にあると便利だけど、音が気になる人もいる。","駐車場"],
+      [65,"駐車場・共用部","駐輪場が狭い物件は、住み始めてから不満が出やすい。","駐輪場"],
+      [66,"駐車場・共用部","ゴミ置き場がきれいな物件は、入居者層が見えやすい。","ゴミ置き場"],
+      [67,"駐車場・共用部","共用灯が暗い物件は、夜に見に行くと印象が変わる。","夜の外観"],
+      [68,"駐車場・共用部","ポスト周りが荒れている物件は、管理状態を疑った方がいい。","ポスト"],
+      [69,"駐車場・共用部","階段の音が響きやすい物件は、部屋の位置も大事。","階段"],
+      [70,"駐車場・共用部","駐車場が無料に見えても、契約条件を確認した方がいい。","駐車場"],
+      [71,"駐車場・共用部","駐車場代が安くても、契約手数料がかかることがある。","駐車場"],
+      [72,"駐車場・共用部","物件前の道路が狭いと、引っ越し当日に困ることがある。","前面道路"],
+      [73,"駐車場・共用部","共用廊下に私物が多い物件は、現地で空気感が分かる。","共用廊下"],
+      [74,"駐車場・共用部","駐車場の空きは、ネット掲載だけで確定しない。","駐車場"],
+      [75,"駐車場・共用部","地方の大東建託物件は、駐車場の台数で人気が変わる。","駐車場"],
+      [76,"駐車場・共用部","雨の日に共用階段を見ると、滑りやすさが分かる。","階段"],
+      [77,"駐車場・共用部","夜の外観は、昼間とかなり印象が変わる。","夜の外観"],
+      [78,"駐車場・共用部","車社会の地域では、間取りより駐車場の方が大事なこともある。","駐車場"],
+      [79,"駐車場・共用部","敷地内駐車場と近隣駐車場では、生活のしやすさが全然違う。","駐車場"],
+      [80,"駐車場・共用部","駐車場の区画番号まで確認してから申し込むと安心。","駐車区画"],
+      [81,"元店長目線・本音","不動産屋は物件を探す人には強いけど、物件が決まっている人には別の選択肢がある。","外観"],
+      [82,"元店長目線・本音","大東建託物件は成約しやすいけど、仲介会社から見ると利益が出にくいことがある。","外観"],
+      [83,"元店長目線・本音","大東建託物件は、良い物件なのに紹介されにくいことがある。","外観"],
+      [84,"元店長目線・本音","物件選びで一番危ないのは、テンションが上がって費用を見なくなること。","外観"],
+      [85,"元店長目線・本音","申し込み前の数時間で、初期費用の見え方は変わることがある。","スマホ画面"],
+      [86,"元店長目線・本音","不動産屋に聞きにくいことほど、契約前に確認した方がいい。","外観"],
+      [87,"元店長目線・本音","大東建託物件は、契約の段取りを知っている人が見るとかなり進めやすい。","外観"],
+      [88,"元店長目線・本音","入居日を先延ばししたい人は、即入居可物件だと注意が必要。","外観"],
+      [89,"元店長目線・本音","即入居可の物件は、申し込みから14日以内を求められることが多い。","外観"],
+      [90,"元店長目線・本音","ただし入居日は、物件や時期によって交渉できることもある。","外観"],
+      [91,"元店長目線・本音","大東建託の物件は、契約開始日の感覚を知らないと驚く人が多い。","外観"],
+      [92,"元店長目線・本音","物件が決まっている人ほど、手続きはシンプルにした方がいい。","外観"],
+      [93,"元店長目線・本音","内見前に盛り上がるより、申し込み前に冷静になる方が大事。","外観"],
+      [94,"元店長目線・本音","大東建託の物件は、情報が多いからこそ見方を知っていると早い。","外観"],
+      [95,"元店長目線・本音","店舗時代に一番多かった相談は、物件そのものより初期費用だった。","外観"],
+      [96,"元店長目線・本音","不動産の見積もりは、見慣れていない人にはかなり分かりにくい。","見積もり風画面"],
+      [97,"元店長目線・本音","似たような項目名でも、月額費用と初期費用は分けて見た方がいい。","見積もり風画面"],
+      [98,"元店長目線・本音","見積もりで大事なのは、合計額だけではなく何が入っているか。","見積もり風画面"],
+      [99,"元店長目線・本音","物件探しは楽しいけど、契約は冷静に見た方がいい。","外観"],
+      [100,"元店長目線・本音","大東建託物件は、詳しい人に聞くと見方が変わる。","外観"]
+    ];
+
+    let activeCategory = "すべて";
+    const categories = ["すべて", ...Array.from(new Set(items.map(item => item[1])))];
+    const tabs = document.getElementById("tabs");
+    const list = document.getElementById("list");
+    const count = document.getElementById("count");
+    const search = document.getElementById("search");
+
+    function renderTabs() {
+      tabs.innerHTML = "";
+      categories.forEach(category => {
+        const button = document.createElement("button");
+        button.className = "tab" + (category === activeCategory ? " active" : "");
+        button.textContent = category;
+        button.onclick = () => {
+          activeCategory = category;
+          render();
+        };
+        tabs.appendChild(button);
+      });
+    }
+
+    function copyText(text, button) {
+      navigator.clipboard.writeText(text).then(() => {
+        const old = button.textContent;
+        button.textContent = "コピーしました";
+        setTimeout(() => button.textContent = old, 1200);
+      });
+    }
+
+    function render() {
+      renderTabs();
+      const keyword = search.value.trim();
+      const filtered = items.filter(item => {
+        const categoryOk = activeCategory === "すべて" || item[1] === activeCategory;
+        const keywordOk = !keyword || `${item[1]} ${item[2]} ${item[3]}`.includes(keyword);
+        return categoryOk && keywordOk;
+      });
+      count.textContent = `${filtered.length}本表示`;
+      list.innerHTML = "";
+      if (!filtered.length) {
+        list.innerHTML = '<div class="empty">該当するネタがありません。</div>';
+        return;
+      }
+      filtered.forEach(item => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="meta"><span>No.${item[0]}</span><span class="category">${item[1]}</span></div>
+          <p class="text">${item[2]}</p>
+          <p class="bg">背景案：${item[3]}</p>
+          <button class="copy" type="button">投稿文をコピー</button>
+        `;
+        card.querySelector("button").onclick = (event) => copyText(item[2], event.currentTarget);
+        list.appendChild(card);
+      });
+    }
+
+    search.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
