@@ -1,977 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大東建託 DK SELECT物件の初期費用を安くするなら｜らびお</title>
-    <meta name="description" content="大東建託のDK SELECT物件を借りたい方へ。大東建託直営店や一般の不動産会社と比べて初期費用が平均10万円安くなるサービスです。LINEで簡易見積もりを無料で確認できます。">
-    <meta property="og:title" content="大東建託 DK SELECT物件の初期費用を安くするなら">
-    <meta property="og:description" content="大東建託直営店や一般の不動産会社と比べて、初期費用が平均10万円安くなる。DK SELECT物件専門のかんたん比較。">
-    <meta property="og:image" content="main-visual.png">
-    <meta property="og:type" content="website">
-    <style>
-        :root {
-            --navy: #0d2538;
-            --navy-2: #123553;
-            --gold: #c9a227;
-            --line: #06c755;
-            --red: #c90000;
-            --ink: #202733;
-            --muted: #647083;
-            --paper: #ffffff;
-            --soft: #f4f7fb;
-            --line-soft: #e8f8ef;
-            --border: #dfe6ef;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            margin: 0;
-            color: var(--ink);
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.65;
-            background: var(--paper);
-        }
-
-        a { color: inherit; text-decoration: none; }
-
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .container {
-            width: min(1120px, calc(100% - 32px));
-            margin: 0 auto;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-        }
-
-        .header-inner {
-            min-height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .brand {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            color: var(--navy);
-            font-weight: 800;
-            letter-spacing: 0;
-        }
-
-        .brand small {
-            color: var(--muted);
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            font-size: 0.9rem;
-            color: var(--navy);
-            font-weight: 700;
-        }
-
-        .header-nav a:not(.mini-cta) {
-            color: var(--navy);
-        }
-
-        .mini-cta,
-        .btn-line {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            border-radius: 999px;
-            background: var(--line);
-            color: #fff;
-            font-weight: 800;
-            box-shadow: 0 10px 22px rgba(6, 199, 85, 0.24);
-        }
-
-        .mini-cta {
-            min-height: 40px;
-            padding: 0 18px;
-            font-size: 0.9rem;
-        }
-
-        .hero {
-            background: var(--paper);
-        }
-
-        .hero-image {
-            width: 100%;
-            max-height: 660px;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .hero-summary {
-            margin-top: -1px;
-            background: linear-gradient(135deg, var(--navy), var(--navy-2));
-            color: #fff;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 28px;
-            align-items: center;
-            padding: 28px 0;
-        }
-
-        .summary-copy h1 {
-            margin: 0 0 10px;
-            font-size: clamp(1.45rem, 4vw, 2.25rem);
-            line-height: 1.25;
-            letter-spacing: 0;
-        }
-
-        .summary-copy p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.86);
-            font-size: 1rem;
-        }
-
-        .quick-points {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-        }
-
-        .quick-point {
-            min-height: 92px;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-        }
-
-        .quick-point strong {
-            display: block;
-            font-size: 1.45rem;
-            line-height: 1.1;
-            color: #fff;
-        }
-
-        .quick-point span {
-            display: block;
-            margin-top: 6px;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 0.82rem;
-        }
-
-        .savings-strip {
-            border-bottom: 1px solid #f0dca5;
-            background: #fff8e7;
-        }
-
-        .savings-inner {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 18px;
-            align-items: center;
-            padding: 16px 0;
-        }
-
-        .savings-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 120px;
-            min-height: 42px;
-            padding: 0 16px;
-            border-radius: 999px;
-            background: var(--red);
-            color: #fff;
-            font-weight: 900;
-        }
-
-        .savings-copy {
-            margin: 0;
-            color: var(--navy);
-            font-weight: 800;
-        }
-
-        .savings-copy span {
-            color: var(--red);
-            font-size: 1.18em;
-        }
-
-        .section {
-            padding: 64px 0;
-        }
-
-        .section.soft {
-            background: var(--soft);
-        }
-
-        .section-head {
-            margin: 0 auto 28px;
-            max-width: 760px;
-            text-align: center;
-        }
-
-        .eyebrow {
-            margin: 0 0 8px;
-            color: var(--gold);
-            font-size: 0.82rem;
-            font-weight: 900;
-        }
-
-        h2 {
-            margin: 0;
-            color: var(--navy);
-            font-size: clamp(1.55rem, 4vw, 2.2rem);
-            line-height: 1.3;
-            letter-spacing: 0;
-        }
-
-        .lead {
-            margin: 14px 0 0;
-            color: var(--muted);
-            font-size: 1rem;
-        }
-
-        .btn-line {
-            width: min(100%, 420px);
-            padding: 0 24px;
-            font-size: 1.1rem;
-        }
-
-        .cta-note {
-            margin: 10px 0 0;
-            color: var(--muted);
-            font-size: 0.82rem;
-        }
-
-        .cta-block {
-            margin-top: 28px;
-            text-align: center;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .greeting {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 34px;
-            align-items: center;
-        }
-
-        .portrait {
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #fff;
-            box-shadow: 0 16px 36px rgba(13, 37, 56, 0.12);
-        }
-
-        .portrait img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-        }
-
-        .signature {
-            padding: 16px 18px;
-            border-top: 1px solid var(--border);
-        }
-
-        .signature strong {
-            display: block;
-            color: var(--navy);
-            font-size: 1.05rem;
-        }
-
-        .signature span {
-            display: block;
-            margin-top: 3px;
-            color: var(--muted);
-            font-size: 0.86rem;
-        }
-
-        .message {
-            padding: 30px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: #fff;
-        }
-
-        .message h2 {
-            margin-bottom: 16px;
-            text-align: left;
-        }
-
-        .message p {
-            margin: 0 0 14px;
-            color: #3c4656;
-        }
-
-        .message p:last-child {
-            margin-bottom: 0;
-        }
-
-        .message-emphasis {
-            margin: 22px 0;
-            padding: 18px 20px;
-            border-left: 4px solid var(--gold);
-            background: #fbf8ef;
-            color: var(--navy);
-            font-weight: 800;
-        }
-
-        .card {
-            min-height: 190px;
-            padding: 22px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: #fff;
-        }
-
-        .card-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: var(--navy);
-            color: #fff;
-            font-weight: 900;
-            font-size: 0.9rem;
-        }
-
-        .card h3 {
-            margin: 14px 0 8px;
-            color: var(--navy);
-            font-size: 1.12rem;
-            line-height: 1.35;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.94rem;
-        }
-
-        .compare {
-            overflow: hidden;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: #fff;
-        }
-
-        .saving-panel {
-            margin-bottom: 22px;
-            padding: 24px;
-            border-radius: 8px;
-            background: var(--navy);
-            color: #fff;
-            text-align: center;
-        }
-
-        .saving-panel strong {
-            display: block;
-            color: #fff;
-            font-size: clamp(2.2rem, 7vw, 4.2rem);
-            line-height: 1;
-            letter-spacing: 0;
-        }
-
-        .saving-panel p {
-            margin: 12px 0 0;
-            color: rgba(255, 255, 255, 0.86);
-        }
-
-        .compare-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .compare-row:last-child {
-            border-bottom: 0;
-        }
-
-        .compare-cell {
-            padding: 22px;
-        }
-
-        .compare-cell + .compare-cell {
-            border-left: 1px solid var(--border);
-        }
-
-        .compare-cell h3 {
-            margin: 0 0 12px;
-            color: var(--navy);
-            font-size: 1.1rem;
-        }
-
-        .compare-cell ul {
-            margin: 0;
-            padding-left: 1.2em;
-            color: var(--muted);
-        }
-
-        .rabio {
-            background: #fff7f9;
-        }
-
-        .rabio h3,
-        .rabio strong {
-            color: #d8214c;
-        }
-
-        .image-band {
-            margin-top: 32px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(13, 37, 56, 0.08);
-        }
-
-        .target-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            align-items: stretch;
-        }
-
-        .target-panel {
-            padding: 26px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #fff;
-        }
-
-        .target-panel.ok {
-            border-color: rgba(6, 199, 85, 0.35);
-            background: var(--line-soft);
-        }
-
-        .target-panel h3 {
-            margin: 0 0 12px;
-            color: var(--navy);
-            font-size: 1.2rem;
-        }
-
-        .target-panel ul {
-            margin: 0;
-            padding-left: 1.2em;
-            color: var(--muted);
-        }
-
-        .flow {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .flow-step {
-            padding: 20px;
-            border-radius: 8px;
-            background: #fff;
-            border: 1px solid var(--border);
-        }
-
-        .flow-step strong {
-            display: block;
-            color: var(--gold);
-            font-size: 0.84rem;
-        }
-
-        .flow-step h3 {
-            margin: 8px 0 8px;
-            color: var(--navy);
-            font-size: 1rem;
-            line-height: 1.35;
-        }
-
-        .flow-step p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        .faq {
-            display: grid;
-            gap: 12px;
-            max-width: 880px;
-            margin: 0 auto;
-        }
-
-        details {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: #fff;
-            padding: 18px 20px;
-        }
-
-        summary {
-            cursor: pointer;
-            color: var(--navy);
-            font-weight: 800;
-        }
-
-        details p {
-            margin: 12px 0 0;
-            color: var(--muted);
-        }
-
-        .final-cta {
-            color: #fff;
-            background: linear-gradient(135deg, var(--navy), #1b4568);
-        }
-
-        .final-cta h2 {
-            color: #fff;
-        }
-
-        .final-cta .lead,
-        .final-cta .cta-note {
-            color: rgba(255, 255, 255, 0.82);
-        }
-
-        footer {
-            padding: 42px 0 86px;
-            color: #cbd3dc;
-            background: #202733;
-            font-size: 0.9rem;
-        }
-
-        footer h2 {
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        .company-info {
-            margin: 14px 0 0;
-        }
-
-        .fixed-cta {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 30;
-            padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-            background: rgba(255, 255, 255, 0.94);
-            border-top: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-            display: none;
-        }
-
-        .fixed-cta a {
-            width: 100%;
-            min-height: 48px;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 880px) {
-            .header-nav a:not(.mini-cta) {
-                display: none;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>大東建託物件の初期費用を申し込む前に確認 | LAVISH</title>
+    <meta
+      name="description"
+      content="大東建託物件専門の初期費用確認サービス。ご検討中の大東建託物件のURLをLINEで送るだけで、仲介手数料やオプション費用など下げられる可能性がある項目を無料で確認します。"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="大東建託物件の初期費用を申し込む前に確認 | LAVISH" />
+    <meta
+      property="og:description"
+      content="大東建託物件専門。ご検討中の大東建託物件のURLをLINEで送るだけで、初期費用を下げられる可能性がある項目を無料で確認します。"
+    />
+    <meta property="og:url" content="https://lavio8.github.io/lavio/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://lavio8.github.io/lavio/" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "LAVISH",
+        "legalName": "株式会社LAVISH",
+        "url": "https://lavio8.github.io/lavio/",
+        "email": "info@lavish-corp.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "大阪市中央区",
+          "streetAddress": "南船場1丁目16-23",
+          "addressCountry": "JP"
+        },
+        "areaServed": "JP",
+        "description": "大東建託物件専門の初期費用確認サービス。"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "申し込み前でも相談できますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。大東建託物件を申し込む前の段階で、ご検討中の物件URLから確認できます。申し込み後や契約後は対応が難しくなる場合があります。"
             }
-
-            .summary-grid,
-            .greeting,
-            .target-box {
-                grid-template-columns: 1fr;
+          },
+          {
+            "@type": "Question",
+            "name": "相談は無料ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LINEでの見積もり確認は無料です。こちらからしつこい営業はいたしません。"
             }
-
-            .savings-inner {
-                grid-template-columns: 1fr;
-                gap: 8px;
-                text-align: center;
+          },
+          {
+            "@type": "Question",
+            "name": "必ず初期費用は下がりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "物件や申し込み状況によって異なるため、必ず下がるとは限りません。仲介手数料やオプション費用など、確認できる項目をご案内します。"
             }
-
-            .quick-points,
-            .cards,
-            .flow {
-                grid-template-columns: 1fr;
-            }
-
-            .compare-row {
-                grid-template-columns: 1fr;
-            }
-
-            .compare-cell + .compare-cell {
-                border-left: 0;
-                border-top: 1px solid var(--border);
-            }
-
-            .hero-image {
-                min-height: 0;
-                object-fit: contain;
-                object-position: center;
-            }
-
-            .hero {
-                padding-top: 0;
-            }
-
-            .hero picture {
-                display: block;
-                overflow: hidden;
-                background: #eef3f6;
-            }
-
-            .hero picture img {
-                width: 100%;
-                max-width: 100%;
-                margin-left: 0;
-            }
-
-            .section {
-                padding: 48px 0;
-            }
-
-            .fixed-cta {
-                display: block;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .container {
-                width: min(100% - 24px, 1120px);
-            }
-
-            .brand {
-                font-size: 0.95rem;
-            }
-
-            .mini-cta {
-                min-height: 38px;
-                padding: 0 14px;
-                font-size: 0.82rem;
-            }
-
-            .hero-image {
-                min-height: 0;
-                object-position: center;
-            }
-
-            .summary-grid {
-                gap: 18px;
-                padding: 24px 0;
-            }
-
-            .quick-point {
-                min-height: auto;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="#top" aria-label="らびお">
-                大東建託 DK SELECT専門
-                <small>初期費用のかんたん比較</small>
-            </a>
-            <nav class="header-nav" aria-label="ページ内ナビゲーション">
-                <a href="#reason">安くなる理由</a>
-                <a href="#target">対象物件</a>
-                <a href="#flow">流れ</a>
-                <a class="mini-cta" href="https://lin.ee/9pHyNEU">LINEで無料見積もり</a>
-            </nav>
-        </div>
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-reveal>
+      <a class="brand" href="#top" aria-label="LAVISH トップへ">
+        <span class="brand-mark">L</span>
+        <span>LAVISH</span>
+      </a>
+      <nav class="nav" aria-label="主要ナビゲーション">
+        <a href="#reason">安くなる理由</a>
+        <a href="#cases">事例</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="https://lin.ee/6dwYhc3" rel="noopener">LINEで無料確認</a>
     </header>
 
     <main id="top">
-        <section class="hero" aria-label="大東建託物件の初期費用削減">
-            <picture>
-                <source srcset="main-visual.webp" type="image/webp">
-                <img class="hero-image" src="main-visual.png" alt="スマートに借りる。初期費用平均10万円削減">
-            </picture>
-            <div class="hero-summary">
-                <div class="container summary-grid">
-                    <div class="summary-copy">
-                        <h1>大東建託直営店や一般の不動産会社と比べて、初期費用を平均10万円削減。</h1>
-                        <p>大東建託物件に特化した仲介サービスです。物件提案や内見同行を省き、申し込み前後の見積もり確認と契約手続きのサポートに集中します。</p>
-                    </div>
-                    <div class="quick-points" aria-label="特徴">
-                        <div class="quick-point">
-                            <strong>平均10万円</strong>
-                            <span>初期費用を削減</span>
-                        </div>
-                        <div class="quick-point">
-                            <strong>専門</strong>
-                            <span>DK SELECT物件に対応</span>
-                        </div>
-                        <div class="quick-point">
-                            <strong>営業なし</strong>
-                            <span>こちらから物件提案しません</span>
-                        </div>
-                    </div>
-                </div>
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="glow glow-one"></span>
+          <span class="glow glow-two"></span>
+          <span class="grid-line"></span>
+        </div>
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">大東建託物件専門の仲介サービス</p>
+          <h1>大東建託物件の初期費用、申し込む前に一度確認。</h1>
+          <div class="hero-proof" aria-label="初期費用削減実績">
+            <span>初期費用</span>
+            <strong>平均10万円削減</strong>
+          </div>
+          <p class="lead">
+            ご検討中の大東建託物件のURLをLINEで送るだけ。仲介手数料やオプション費用など、下げられる可能性がある項目を無料で確認します。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="https://lin.ee/6dwYhc3" rel="noopener">LINEで物件URLを送る</a>
+            <a class="secondary-btn" href="#check">確認できることを見る</a>
+          </div>
+          <dl class="trust-strip" aria-label="サービスの特徴">
+            <div>
+              <dt>初期費用</dt>
+              <dd>平均10万円削減</dd>
             </div>
-        </section>
-
-        <div class="savings-strip" aria-label="初期費用削減の訴求">
-            <div class="container savings-inner">
-                <div class="savings-badge">平均10万円削減</div>
-                <p class="savings-copy">大東建託直営店・一般の不動産会社と比べて、<span>仲介手数料と任意オプション</span>を中心に初期費用を抑えます。</p>
-                <a class="mini-cta" href="https://lin.ee/9pHyNEU">LINEで確認</a>
+            <div>
+              <dt>相談</dt>
+              <dd>無料</dd>
             </div>
+            <div>
+              <dt>営業</dt>
+              <dd>なし</dd>
+            </div>
+          </dl>
         </div>
 
-        <section class="section soft" id="message">
-            <div class="container greeting">
-                <div class="portrait">
-                    <picture>
-                        <source srcset="representative-ogawa.webp" type="image/webp">
-                        <img src="representative-ogawa.png" alt="らびお運営者 小川裕介">
-                    </picture>
-                    <div class="signature">
-                        <strong>小川 裕介</strong>
-                        <span>株式会社LAVISH / 宅地建物取引士</span>
-                    </div>
-                </div>
-                <div class="message">
-                    <p class="eyebrow">MESSAGE</p>
-                    <h2>なぜ、大東建託物件専門の仲介を始めたのか。</h2>
-                    <p>はじめまして。らびおを運営している小川です。</p>
-                    <p>私は大東建託の現場で長く店舗責任者として勤務し、多くの契約、入居手続き、初期費用のご相談に携わってきました。</p>
-                    <p>大東建託物件は全国に130万戸以上あり、国民の55人に1人が住んでいるとも言われています。毎日、約75秒に1人が新しく契約しているほど、多くの方に選ばれている賃貸住宅です。</p>
-                    <p>しかし、その多くの方が、仲介手数料や任意オプションを含めた「満額プラスα」の初期費用を支払って契約しているのも現実です。</p>
-                    <p>私は大東建託物件の客づけに長く携わってきた者として、もっとリーズナブルに、もっと簡単に借りていただける方法があっていいと考えるようになりました。</p>
-                    <p>大東建託物件は知名度があり、設備や管理面でも安心感があるため、仲介業者にとって成約しやすい物件です。</p>
-                    <p>一方で、貸主側から仲介会社へ支払われる手数料が少ないケースもあり、一般の不動産会社から見ると利益につながりにくい物件になりやすい現実があります。</p>
-                    <p>その結果、大東建託物件ではなく他社物件をすすめられたり、大東建託物件で進める場合でも仲介手数料の値引きが難しかったり、任意オプションが上乗せされたりすることがあります。</p>
-                    <div class="message-emphasis">だから私は、大東建託物件に特化し、初期費用をできるだけ抑えて契約できる専門窓口を作りました。</div>
-                    <p>物件提案や内見同行は行いません。その代わり、すでに大東建託物件を検討している方に絞り、仲介手数料を抑え、不要な任意オプションを入れない形で、初期費用をわかりやすく比較します。</p>
-                    <p>「この物件で進めたい。でも初期費用はできるだけ抑えたい」そんな方のお役に立てるサービスを目指しています。</p>
-                </div>
+        <div class="hero-visual" data-reveal>
+          <div class="phone-card float-slow" aria-label="LINE相談イメージ">
+            <div class="phone-top"></div>
+            <div class="chat incoming">大東建託物件の初期費用が高くて...</div>
+            <div class="chat outgoing">申し込む前なら確認できます</div>
+            <div class="chat incoming">物件URLを送ればOKですか？</div>
+            <div class="chat outgoing">はい、無料で確認します</div>
+          </div>
+          <div class="estimate-card float-fast">
+            <p>初期費用見積書</p>
+            <div class="estimate-row">
+              <span>仲介手数料</span>
+              <strong>確認対象</strong>
             </div>
-        </section>
-
-        <section class="section" id="reason">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">WHY CHEAPER</p>
-                    <h2>安くなる理由は、やることを絞っているから。</h2>
-                    <p class="lead">らびおは「大東建託のDK SELECT物件を、すでに検討している方」のためのサービスです。物件探しや内見同行を行わない分、初期費用を抑える提案に集中できます。</p>
-                </div>
-
-                <div class="cards">
-                    <div class="card">
-                        <span class="card-number">1</span>
-                        <h3>大東建託物件に特化</h3>
-                        <p>DK SELECT物件の費用項目や申込の流れに絞って確認します。広く浅くではなく、対象を限定しています。</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-number">2</span>
-                        <h3>物件提案・内見同行なし</h3>
-                        <p>全国対応のため、物件紹介や現地案内は行いません。お客様が決めた物件の見積もり比較に特化します。</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-number">3</span>
-                        <h3>不要なオプションなし</h3>
-                        <p>各種任意オプションや取次サービスを前提にせず、必要な費用をわかりやすく比較します。</p>
-                    </div>
-                </div>
-
-                <div class="cta-block">
-                    <a class="btn-line" href="https://lin.ee/9pHyNEU">LINEで無料見積もりを依頼する</a>
-                    <p class="cta-note">検討中の大東建託物件情報を送ってください。こちらから営業はいたしません。</p>
-                </div>
+            <div class="estimate-row">
+              <span>オプション費用</span>
+              <strong>確認対象</strong>
             </div>
-        </section>
-
-        <section class="section soft">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">COST COMPARISON</p>
-                    <h2>同じ大東建託物件でも、申し込み窓口で初期費用に差が出ます。</h2>
-                    <p class="lead">大きな差が出やすいのは、仲介手数料と任意オプションです。らびおでは、大東建託直営店や一般の不動産会社と比べて、平均で約10万円安い初期費用を目指します。</p>
-                </div>
-
-                <div class="saving-panel">
-                    <strong>平均10万円削減</strong>
-                    <p>仲介手数料を抑え、各種任意オプションや取次サービスを前提にしないことで、初期費用を大きく下げます。</p>
-                </div>
-
-                <div class="compare" aria-label="費用比較">
-                    <div class="compare-row">
-                        <div class="compare-cell">
-                            <h3>大東建託直営店・一般の不動産会社で申し込んだ場合</h3>
-                            <ul>
-                                <li>仲介手数料は賃料1ヶ月分が目安</li>
-                                <li>任意オプションが追加される場合あり</li>
-                                <li>ウォーターサーバーやインターネットなどの取次提案がある場合あり</li>
-                                <li>引越し業者などの指定・紹介がある場合あり</li>
-                            </ul>
-                        </div>
-                        <div class="compare-cell rabio">
-                            <h3>らびおで申し込んだ場合</h3>
-                            <ul>
-                                <li><strong>仲介手数料は賃料30%が目安</strong></li>
-                                <li>仲介手数料の税込上限は33,000円</li>
-                                <li>任意オプションは入れません</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="image-band">
-                    <picture>
-                        <source srcset="visual2.webp" type="image/webp">
-                        <img src="visual2.png" alt="当社に向いている人">
-                    </picture>
-                </div>
+            <div class="price-drop">
+              <span>324,000円</span>
+              <strong>218,000円</strong>
             </div>
-        </section>
+          </div>
+          <div class="badge-card">
+            <span>申し込む前が重要</span>
+          </div>
+        </div>
+      </section>
 
-        <section class="section" id="target">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">TARGET</p>
-                    <h2>対象は、大東建託のDK SELECT物件です。</h2>
-                    <p class="lead">検討中の物件情報をLINEでお送りください。正確な条件確認のため、物件ページURLがあるとスムーズです。</p>
-                </div>
+      <section class="section intro" id="check">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Before application</p>
+          <h2>大東建託物件の初期費用で、見るべき場所は決まっています。</h2>
+          <p>
+            初期費用が高いと感じても、すべてが下げられるわけではありません。だからこそ、申し込む前に確認すべき項目を絞ることが大切です。
+          </p>
+        </div>
+        <div class="check-grid">
+          <article class="check-card" data-reveal>
+            <span>01</span>
+            <h3>仲介手数料</h3>
+            <p>申し込み経路によって差が出る可能性がある項目です。見積もり内でまず確認します。</p>
+          </article>
+          <article class="check-card" data-reveal>
+            <span>02</span>
+            <h3>オプション費用</h3>
+            <p>必要性や内容を把握しないまま進めると、初期費用が膨らみやすい部分です。</p>
+          </article>
+          <article class="check-card" data-reveal>
+            <span>03</span>
+            <h3>申し込み状況</h3>
+            <p>申し込み後や契約後は対応できる範囲が狭くなります。早い確認ほど有利です。</p>
+          </article>
+        </div>
+      </section>
 
-                <div class="target-box">
-                    <div class="target-panel ok">
-                        <h3>対象になる物件</h3>
-                        <ul>
-                            <li>ページ内にDK SELECT表記がある</li>
-                            <li>借りたい物件がほぼ決まっている</li>
-                            <li>物件URLや資料で物件を特定できる</li>
-                        </ul>
-                    </div>
-                    <div class="target-panel">
-                        <h3>対象外・確認が必要な物件</h3>
-                        <ul>
-                            <li>DK SELECT表記が確認できない物件</li>
-                            <li>物件探しや内見同行を希望される場合</li>
-                            <li>物件名や所在地が確認できない場合</li>
-                        </ul>
-                    </div>
-                </div>
+      <section class="section split" id="reason">
+        <div class="panel dark-panel" data-reveal>
+          <p class="eyebrow">Why LAVISH</p>
+          <h2>大東建託物件に特化するから、ムダなコストを抑えられる。</h2>
+          <p>
+            一般的な不動産会社は、店舗運営・広告・幅広い物件対応にコストがかかります。LAVISHは大東建託物件に特化し、契約手続きのサポートに集中することで、利用者の初期費用負担を軽くする仕組みを作っています。
+          </p>
+        </div>
+        <div class="reason-list" data-reveal>
+          <div>
+            <h3>専門化</h3>
+            <p>大東建託物件に絞ることで、確認すべき費用項目と手続きが明確になります。</p>
+          </div>
+          <div>
+            <h3>オンライン対応</h3>
+            <p>LINEでご検討中の大東建託物件のURLを送るだけ。店舗来店なしで、まず確認できます。</p>
+          </div>
+          <div>
+            <h3>営業しない</h3>
+            <p>確認後にこちらからしつこい営業はしません。必要な人だけ次へ進めます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cases" id="cases">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Case studies</p>
+          <h2>初期費用の比較事例</h2>
+          <p>ご検討中の大東建託物件でも、申し込む前なら確認できる項目があります。</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card" data-reveal>
+            <img
+              src="assets/iida-1ldk-estimate.png"
+              alt="長野県飯田市 1LDK 大東建託物件の入居初期費用比較。一般不動産425,047円、らびお308,997円、差額116,050円。"
+              loading="lazy"
+            />
+            <div class="case-caption">
+              <p>長野県飯田市 / 1LDK</p>
+              <strong>差額 116,050円</strong>
             </div>
-        </section>
-
-        <section class="section soft" id="flow">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">FLOW</p>
-                    <h2>LINEで物件情報を送るだけ。まずは簡易見積もりから。</h2>
-                    <p class="lead">自動返信で一次対応します。正式な空き状況、駐車場、ご契約開始日は後ほどらびおが確認します。</p>
-                </div>
-
-                <div class="flow">
-                    <div class="flow-step">
-                        <strong>STEP 1</strong>
-                        <h3>借りたい物件を決める</h3>
-                        <p>大東建託物件で「この物件で進めたい」という状態にします。</p>
-                    </div>
-                    <div class="flow-step">
-                        <strong>STEP 2</strong>
-                        <h3>LINEで物件情報を送る</h3>
-                        <p>物件URLやスクショなど、物件が特定できる情報を送ります。</p>
-                    </div>
-                    <div class="flow-step">
-                        <strong>STEP 3</strong>
-                        <h3>簡易見積もりを確認</h3>
-                        <p>月初入居、駐車場1台前提の概算比較をお送りします。</p>
-                    </div>
-                    <div class="flow-step">
-                        <strong>STEP 4</strong>
-                        <h3>進める場合は申し込みへ</h3>
-                        <p>正式条件を確認し、問題なければ申込手続きへ進みます。</p>
-                    </div>
-                </div>
-
-                <div class="image-band">
-                    <picture>
-                        <source srcset="visual3.webp" type="image/webp">
-                        <img src="visual3.png" alt="契約の流れ">
-                    </picture>
-                </div>
+          </article>
+          <article class="case-card featured" data-reveal>
+            <img
+              src="assets/fukui-2dk-estimate.png"
+              alt="福井県福井市 2DK 大東建託物件の入居初期費用比較。一般不動産345,299円、らびお246,849円、差額98,450円。"
+              loading="lazy"
+            />
+            <div class="case-caption">
+              <p>福井県福井市 / 2DK</p>
+              <strong>差額 98,450円</strong>
             </div>
-        </section>
-
-        <section class="section" id="faq">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">FAQ</p>
-                    <h2>よくある質問</h2>
-                </div>
-
-                <div class="faq">
-                    <details>
-                        <summary>SUUMOやHOME'SのURLでも見積もりできますか？</summary>
-                        <p>SUUMOやHOME'SのURLでも見積もり確認は可能ですが、物件特定や条件確認にお時間がかかる場合があります。いい部屋ネットの物件URLをお送りいただければ、AIによる簡易見積もりをすぐにお送りできます。</p>
-                    </details>
-                    <details>
-                        <summary>申込済みでも見積もりできますか？</summary>
-                        <p>見積もり確認自体は可能です。ただし、すでに他社で申し込みが進んでいる場合、変更できるかどうかは状況確認が必要です。</p>
-                    </details>
-                    <details>
-                        <summary>すぐ入居できる物件を先の日程で契約できますか？</summary>
-                        <p>即入居可能物件は、申し込みから14日以内を目安に契約開始を求められることがあります。交渉できる場合もありますが、物件ごとの確認が必要です。</p>
-                    </details>
-                    <details>
-                        <summary>駐車場の空きも確認できますか？</summary>
-                        <p>簡易見積もりでは駐車場1台前提で計算します。実際の空き状況は、後ほどらびおが管理会社へ確認します。</p>
-                    </details>
-                </div>
+          </article>
+          <article class="case-card" data-reveal>
+            <img
+              src="assets/adachi-1ldk-estimate.png"
+              alt="東京都足立区新築 1LDK 大東建託物件の入居初期費用比較。一般不動産892,866円、らびお671,766円、差額221,100円。"
+              loading="lazy"
+            />
+            <div class="case-caption">
+              <p>東京都足立区新築 / 1LDK</p>
+              <strong>差額 221,100円</strong>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
 
-        <section class="section final-cta" id="contact">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">FREE ESTIMATE</p>
-                    <h2>まずは、検討中の大東建託物件をLINEで送ってください。</h2>
-                    <p class="lead">DK SELECT物件か確認し、対象物件であれば初期費用の簡易見積もりをお送りします。</p>
-                    <div class="cta-block">
-                        <a class="btn-line" href="https://lin.ee/9pHyNEU">LINEで問い合わせる</a>
-                        <p class="cta-note">24時間受付中。こちらから営業はいたしません。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="section seo-copy">
+        <article data-reveal>
+          <h2>大東建託物件の初期費用が高いと感じたら、申し込む前に確認してください。</h2>
+          <p>
+            大東建託物件やDK SELECTの物件で部屋探しをしていると、初期費用の見積もりを見て「思ったより高い」と感じることがあります。家賃、敷金、礼金、前家賃、保証会社費用、仲介手数料、各種オプション費用など、複数の項目が重なるためです。
+          </p>
+          <p>
+            ただし、初期費用のすべてが自由に下がるわけではありません。物件ごとに決まっている費用もあります。一方で、申し込み前であれば、仲介手数料やオプション費用など確認できる可能性がある項目もあります。
+          </p>
+          <p>
+            LAVISHでは、ご検討中の大東建託物件のURLをLINEで送っていただくだけで、初期費用の中で確認すべき項目を無料でご案内します。大東建託物件に直接申し込む前、または他社で申し込みを進める前に、一度確認することで不要な負担を避けられる可能性があります。
+          </p>
+        </article>
+      </section>
+
+      <section class="section profile-section">
+        <div class="profile-card" data-reveal>
+          <div class="profile-photo" aria-label="運営責任者写真の差し替え枠">小川</div>
+          <div>
+            <p class="eyebrow">Operator</p>
+            <h2>運営責任者</h2>
+            <p class="profile-title">元大東建託リーシング店長</p>
+            <p>
+              小川 裕介が初期費用の確認を担当します。大東建託物件の申し込み前に確認すべき項目を、実務経験をもとにご案内します。
+            </p>
+            <ul class="license-list">
+              <li>免許番号: 大阪府知事（1）64799</li>
+              <li>株式会社LAVISH</li>
+              <li>大阪市中央区南船場1丁目16-23</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section flow">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Flow</p>
+          <h2>初期費用確認は3ステップ</h2>
+        </div>
+        <ol class="flow-list">
+          <li data-reveal>
+            <span>1</span>
+            <h3>LINEを追加</h3>
+            <p>まずはLINEから無料で相談できます。</p>
+          </li>
+          <li data-reveal>
+            <span>2</span>
+            <h3>物件URLを送る</h3>
+            <p>ご検討中の大東建託物件のURLを送ってください。</p>
+          </li>
+          <li data-reveal>
+            <span>3</span>
+            <h3>確認結果を受け取る</h3>
+            <p>下げられる可能性がある項目や注意点をご案内します。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="faq-list">
+          <details data-reveal open>
+            <summary>必ず初期費用は下がりますか？</summary>
+            <p>必ず下がるとは限りません。物件や申し込み状況によって異なります。確認できる項目を見積もりから判断します。</p>
+          </details>
+          <details data-reveal>
+            <summary>大東建託物件に申し込み後でも相談できますか？</summary>
+            <p>相談は可能ですが、申し込み後や契約後は対応できる範囲が狭くなる場合があります。申し込む前の確認がおすすめです。</p>
+          </details>
+          <details data-reveal>
+            <summary>LINE追加後に営業されますか？</summary>
+            <p>こちらからしつこい営業はいたしません。必要な確認に対して返信します。</p>
+          </details>
+          <details data-reveal>
+            <summary>どの地域でも対応できますか？</summary>
+            <p>対応可否は物件や状況によって変わります。まずはご検討中の大東建託物件のURLをLINEで送ってください。</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="final-cta" data-reveal>
+        <p class="eyebrow">Free check</p>
+        <h2>大東建託物件の初期費用が高いと思ったら、申し込む前に。</h2>
+        <a class="primary-btn" href="https://lin.ee/6dwYhc3" rel="noopener">LINEで無料確認する</a>
+        <p class="note">24時間受付中。ご検討中の大東建託物件のURLを送るだけで確認できます。</p>
+      </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <h2>運営者情報</h2>
-            <p class="company-info">
-                免許番号：大阪府知事（1）64799<br>
-                株式会社LAVISH<br>
-                運営責任者：小川 裕介<br>
-                所在地：大阪市中央区南船場1丁目16-23<br>
-                連絡先：info@lavish-corp.com
-            </p>
-            <p class="company-info">&copy; 2026 Lavio.</p>
-        </div>
+    <footer class="footer">
+      <p>© 2024 LAVISH.</p>
+      <p>株式会社LAVISH / info@lavish-corp.com</p>
     </footer>
 
-    <div class="fixed-cta" aria-label="固定問い合わせボタン">
-        <a class="btn-line" href="https://lin.ee/9pHyNEU">LINEで無料見積もり</a>
-    </div>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
