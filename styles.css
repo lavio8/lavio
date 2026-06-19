@@ -562,6 +562,11 @@ h3 {
   list-style: none;
 }
 
+.profile-name {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
 .profile-title {
   display: inline-flex;
   margin-bottom: 12px;
