@@ -47,12 +47,32 @@ a {
   backdrop-filter: blur(18px);
 }
 
-.brand {
+.brand,
+.header-message {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.header-message {
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.header-message span {
+  padding: 5px 8px;
+  color: var(--white);
+  font-size: 12px;
+  line-height: 1;
+  background: linear-gradient(135deg, #ff3157, #c90024);
+  border-radius: 8px;
+}
+
+.header-message strong {
+  font-size: 15px;
+  line-height: 1.25;
 }
 
 .brand-mark {
@@ -726,6 +746,20 @@ h3 {
 @media (max-width: 620px) {
   .site-header {
     padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .header-message {
+    max-width: 190px;
+    gap: 6px;
+  }
+
+  .header-message span {
+    font-size: 10px;
+  }
+
+  .header-message strong {
+    font-size: 12px;
   }
 
   .header-cta {
