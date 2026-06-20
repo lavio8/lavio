@@ -154,7 +154,8 @@ a {
 }
 
 .hero-copy,
-.hero-visual {
+.hero-visual,
+.hero-manga {
   position: relative;
   z-index: 1;
 }
@@ -233,39 +234,24 @@ h3 {
   margin: 34px 0;
 }
 
-.trust-strip {
-  display: grid;
-  max-width: 560px;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-}
-
-.trust-strip div {
-  padding: 18px;
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.trust-strip div:last-child {
-  border-right: 0;
-}
-
-.trust-strip dt {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 12px;
-}
-
-.trust-strip dd {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 900;
-}
-
 .hero-visual {
   min-height: 560px;
+}
+
+.hero-manga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-manga img {
+  display: block;
+  width: min(100%, 520px);
+  max-height: min(78vh, 760px);
+  object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
 }
 
 .phone-card,
@@ -762,19 +748,6 @@ h3 {
 
   .hero-actions {
     display: grid;
-  }
-
-  .trust-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .trust-strip div {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .trust-strip div:last-child {
-    border-bottom: 0;
   }
 
   .hero-visual {
