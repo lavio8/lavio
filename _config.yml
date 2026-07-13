@@ -1,0 +1,46 @@
+title: LAVISH
+description: 大東建託物件の初期費用を申し込む前に比較できる、LAVISHの大東建託コラムとAI見積りサービス。
+url: "https://lavio8.github.io"
+baseurl: "/lavio"
+lang: ja
+timezone: Asia/Tokyo
+markdown: kramdown
+permalink: /column/:title/
+paginate: 10
+future: false
+
+# 独自ドメインへ移行する際は url を独自ドメイン、baseurl を "" に変更し、
+# READMEの手順に沿ってCNAMEファイルを追加してください。
+
+author:
+  name: 小川 裕介
+  role: 元大東建託リーシング店長 / 宅地建物取引士
+  bio: 大東建託リーシング店長としての実務経験をもとに、初期費用や契約手続きの確認ポイントを解説しています。
+  image: /representative-ogawa.webp
+
+# 記事末尾CTA。LINE導線を変更する場合はこのURLだけ変更してください。
+cta_url: "https://lin.ee/6dwYhc3"
+cta_label: AI10秒見積りを試す
+og_image: /assets/cta-05-fee-compare.png
+
+# Search ConsoleのHTMLタグ確認を使う場合だけ値を入力してください。
+# google_site_verification: ""
+google_site_verification: ""
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: 小川 裕介
+      author_role: 元大東建託リーシング店長 / 宅地建物取引士
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - work
+  - outputs
+  - vendor
+  - node_modules

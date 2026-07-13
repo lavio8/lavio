@@ -1,0 +1,20 @@
+---
+layout: default
+title: ページが見つかりません
+description: お探しのページは見つかりませんでした。
+permalink: /404.html
+---
+<main id="main-content" class="column-page">
+  <div class="column-container">
+    {% include breadcrumbs.html %}
+    <section class="column-bottom-note" style="margin-top: 32px;">
+      <p class="article-kicker">404 / Not found</p>
+      <h1>ページが見つかりませんでした。</h1>
+      <p>URLが変更されたか、ページが削除された可能性があります。</p>
+      <div class="article-cta-actions">
+        <a class="article-button article-button-primary" href="{{ '/' | relative_url }}">トップページへ戻る</a>
+        <a class="article-button article-button-secondary" href="{{ '/column/' | relative_url }}">コラム一覧を見る</a>
+      </div>
+    </section>
+  </div>
+</main>
