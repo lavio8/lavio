@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<main id="main-content" class="article-page">
+  <div class="article-container">
+    {% include breadcrumbs.html %}
+    <article class="article-card-main">
+      <header class="article-header">
+        <p class="article-kicker">大東建託コラム / Q&amp;A</p>
+        <h1>{{ page.title }}</h1>
+        <p class="article-intro">{{ page.intro }}</p>
+        <div class="article-meta" aria-label="記事情報">
+          <span>公開日：<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y年%-m月%-d日' }}</time></span>
+          <span>更新日：<time datetime="{{ page.updated | default: page.date | date_to_xmlschema }}">{{ page.updated | default: page.date | date: '%Y年%-m月%-d日' }}</time></span>
+        </div>
+      </header>
+
+      <div class="article-content-grid">
+        <aside class="toc-card" aria-label="目次">
+          <p class="toc-title">目次</p>
+          <ol>
+            {% for item in page.toc %}
+            <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+            {% endfor %}
+          </ol>
+        </aside>
+
+        <div class="article-body">
+          {{ content }}
+
+          {% if page.faq %}
+          <section class="article-faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">FAQ</h2>
+            {% for item in page.faq %}
+            <details {% if forloop.first %}open{% endif %}>
+              <summary>{{ item.question }}</summary>
+              <p>{{ item.answer }}</p>
+            </details>
+            {% endfor %}
+          </section>
+          {% endif %}
+
+          {% include author.html %}
+
+          {% if page.related %}
+          <section class="related-articles" aria-labelledby="related-heading">
+            <h2 id="related-heading">関連記事</h2>
+            <ul>
+              {% for item in page.related %}
+              <li><a href="{{ item.url | relative_url }}">{{ item.title }}<span aria-hidden="true"> →</span></a></li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+
+    {% include article-cta.html %}
+  </div>
+</main>
