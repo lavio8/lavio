@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'ja' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if page.title %}{% assign meta_title = page.title | append: ' | LAVISH' %}{% else %}{% assign meta_title = site.title %}{% endif %}
+    {% assign meta_description = page.description | default: site.description | strip_html | strip_newlines %}
+    {% assign page_url = page.url | absolute_url %}
+    {% if page.canonical %}{% assign canonical_url = page.canonical %}{% else %}{% assign canonical_url = page_url %}{% endif %}
+    {% assign og_image_url = page.image | default: site.og_image | absolute_url %}
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_description }}" />
+    <meta name="robots" content="index,follow" />
+    {% if site.google_site_verification != '' %}<meta name="google-site-verification" content="{{ site.google_site_verification }}" />{% endif %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" />
+    <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}" />
+    <meta property="og:site_name" content="LAVISH" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="{{ meta_title }}" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:image" content="{{ og_image_url }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ meta_title }}" />
+    <meta name="twitter:description" content="{{ meta_description }}" />
+    <meta name="twitter:image" content="{{ og_image_url }}" />
+    <link rel="stylesheet" href="{{ '/column.css' | relative_url }}" />
+    {% if page.collection == 'posts' %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "headline": {{ page.title | jsonify }},
+            "description": {{ meta_description | jsonify }},
+            "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+            "dateModified": {{ page.updated | default: page.date | date_to_xmlschema | jsonify }},
+            "author": {
+              "@type": "Person",
+              "name": {{ site.author.name | jsonify }},
+              "jobTitle": {{ site.author.role | jsonify }},
+              "url": {{ '/' | absolute_url | jsonify }}
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "株式会社LAVISH",
+              "url": {{ '/' | absolute_url | jsonify }}
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": {{ page_url | jsonify }}
+            },
+            "image": {{ og_image_url | jsonify }}
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "LAVISH",
+                "item": {{ '/' | absolute_url | jsonify }}
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "大東建託コラム",
+                "item": {{ '/column/' | absolute_url | jsonify }}
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": {{ page.title | jsonify }},
+                "item": {{ page_url | jsonify }}
+              }
+            ]
+          }{% if page.faq %},
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {% for item in page.faq %}
+              {
+                "@type": "Question",
+                "name": {{ item.question | jsonify }},
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": {{ item.answer | jsonify }}
+                }
+              }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ]
+          }{% endif %}
+        ]
+      }
+    </script>
+    {% endif %}
+  </head>
+  <body class="column-site">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+    {% include site-header.html %}
+    {{ content }}
+    {% include site-footer.html %}
+  </body>
+</html>

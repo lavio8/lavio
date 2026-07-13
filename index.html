@@ -1,3 +1,7 @@
+---
+title: 大東建託物件の初期費用を申し込む前に比較 | LAVISH
+description: 大東建託物件専門の初期費用比較サービス。ご検討中の大東建託物件のURLをLINEで送るだけで、仲介手数料やオプション費用など比較すべき項目をAIがすぐにお見積りします。
+---
 <!doctype html>
 <html lang="ja">
   <head>
@@ -9,16 +13,20 @@
       content="大東建託物件専門の初期費用比較サービス。ご検討中の大東建託物件のURLをLINEで送るだけで、仲介手数料やオプション費用など比較すべき項目をAIがすぐにお見積りします。"
     />
     <meta name="robots" content="index,follow" />
+    {% if site.google_site_verification != '' %}<meta name="google-site-verification" content="{{ site.google_site_verification }}" />{% endif %}
     <meta property="og:type" content="website" />
     <meta property="og:title" content="大東建託物件の初期費用を申し込む前に比較 | LAVISH" />
     <meta
       property="og:description"
       content="大東建託物件専門。ご検討中の大東建託物件のURLをLINEで送るだけで、初期費用をいい部屋ネット直営店や一般の仲介会社と比較できます。"
     />
-    <meta property="og:url" content="https://lavio8.github.io/lavio/" />
+    <meta property="og:url" content="{{ '/' | absolute_url }}" />
     <meta property="og:locale" content="ja_JP" />
+    <meta property="og:image" content="{{ site.og_image | absolute_url }}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://lavio8.github.io/lavio/" />
+    <meta name="twitter:image" content="{{ site.og_image | absolute_url }}" />
+    <link rel="canonical" href="{{ '/' | absolute_url }}" />
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -26,7 +34,7 @@
         "@type": "RealEstateAgent",
         "name": "LAVISH",
         "legalName": "株式会社LAVISH",
-        "url": "https://lavio8.github.io/lavio/",
+        "url": "{{ '/' | absolute_url }}",
         "email": "y.ogawa@lavish-corp.com",
         "address": {
           "@type": "PostalAddress",

@@ -1,0 +1,47 @@
+---
+layout: default
+title: 大東建託コラム・Q&A
+description: 大東建託物件の初期費用、仲介手数料、DK SELECTなど、部屋探しの疑問を元大東建託リーシング店長が解説するコラムです。
+permalink: /column/
+---
+<main id="main-content" class="column-page">
+  <div class="column-container">
+    {% include breadcrumbs.html %}
+    <header class="column-intro">
+      <p class="article-kicker">LAVISH COLUMN</p>
+      <h1>大東建託コラム<span>・Q&amp;A</span></h1>
+      <p>大東建託物件の初期費用や仲介手数料、DK SELECTについて、結論を先にわかりやすくまとめています。</p>
+      <div class="column-author-note">
+        <span class="column-author-badge">監修</span>
+        <span>元大東建託リーシング店長・宅地建物取引士 小川裕介</span>
+      </div>
+    </header>
+
+    <section class="article-list" aria-labelledby="article-list-heading">
+      <div class="section-label-row">
+        <h2 id="article-list-heading">新着記事</h2>
+        <span>{{ site.posts.size }}記事</span>
+      </div>
+      {% assign articles = site.posts | sort: 'date' | reverse %}
+      {% for post in articles %}
+      <article class="article-list-card">
+        <div class="article-list-card-body">
+          <div class="article-meta">
+            <span>公開日：{{ post.date | date: '%Y年%-m月%-d日' }}</span>
+            <span>更新日：{{ post.updated | default: post.date | date: '%Y年%-m月%-d日' }}</span>
+          </div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.intro }}</p>
+          <a class="read-more" href="{{ post.url | relative_url }}">記事を読む <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      {% endfor %}
+    </section>
+
+    <aside class="column-bottom-note">
+      <p class="article-kicker">Need a quote?</p>
+      <h2>初期費用が気になる物件は、申し込む前に比較できます。</h2>
+      <a class="article-button article-button-primary" href="{{ site.cta_url }}" rel="noopener">AI10秒見積りを試す</a>
+    </aside>
+  </div>
+</main>
