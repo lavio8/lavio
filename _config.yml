@@ -1,7 +1,7 @@
 title: LAVISH
 description: 大東建託物件の初期費用を申し込む前に比較できる、LAVISHの大東建託コラムとAI見積りサービス。
-url: "https://lavio8.github.io"
-baseurl: "/lavio"
+url: "https://lavio.jp"
+baseurl: ""
 lang: ja
 timezone: Asia/Tokyo
 markdown: kramdown
