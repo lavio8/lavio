@@ -21,9 +21,9 @@ toc:
   - label: 初期費用を比較するポイント
     id: comparison
 related:
-  - title: 大東建託の仲介手数料を安くする方法
+  - title: 当社が大東建託物件の初期費用を下げられる理由
     url: /column/daito-chukaitesuryo/
-  - title: DK SELECTとは？大東建託との関係を解説
+  - title: 大東建託物件はどこも仲介手数料が満額？
     url: /column/dk-select/
 faq:
   - question: 大東建託物件の初期費用は、どこで借りても同じですか？
