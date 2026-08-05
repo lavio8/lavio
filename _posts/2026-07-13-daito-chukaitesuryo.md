@@ -25,8 +25,8 @@ toc:
 related:
   - title: 大東建託の初期費用はいくら？内訳と相場を元店長が解説
     url: /column/daito-shokihiyou/
-  - title: 大東建託物件はどこも仲介手数料が満額？
-    url: /column/dk-select/
+  - title: 大東建託の保証料はいくら？ハウスリーブの保証料を解説
+    url: /column/daito-hoshoryo/
 faq:
   - question: 当社が大東建託物件の初期費用を安くできるのはなぜですか？
     answer: 高額な店舗家賃、多数の営業スタッフ、営業車、大規模な広告掲載などの固定費を抑え、大東建託物件に特化して業務を効率化しているためです。
