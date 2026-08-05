@@ -1,5 +1,5 @@
 title: LAVISH
-description: 大東建託物件の初期費用を申し込む前に比較できる、LAVISHの大東建託コラムとAI見積りサービス。
+description: 大東建託物件へ入居する方のために、初期費用や契約手続きを解説するLAVISHの入居ガイドとAI見積りサービス。
 url: "https://lavio.jp"
 baseurl: ""
 lang: ja
@@ -9,8 +9,7 @@ permalink: /column/:title/
 paginate: 10
 future: false
 
-# 独自ドメインへ移行する際は url を独自ドメイン、baseurl を "" に変更し、
-# READMEの手順に沿ってCNAMEファイルを追加してください。
+# 独自ドメイン設定済み。GitHub Pages側にもCNAMEを登録してください。
 
 author:
   name: 小川 裕介
