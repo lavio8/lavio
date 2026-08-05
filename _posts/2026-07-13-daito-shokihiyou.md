@@ -23,8 +23,8 @@ toc:
 related:
   - title: 当社が大東建託物件の初期費用を下げられる理由
     url: /column/daito-chukaitesuryo/
-  - title: 大東建託物件はどこも仲介手数料が満額？
-    url: /column/dk-select/
+  - title: 大東建託の保証料はいくら？ハウスリーブの保証料を解説
+    url: /column/daito-hoshoryo/
 faq:
   - question: 大東建託物件の初期費用は、どこで借りても同じですか？
     answer: 同じ物件を同じ入居日・同じ条件で借りる場合、大東建託パートナーズに支払う費用と前家賃は基本的に同じです。ただし、仲介手数料やオプションなど、仲介業者へ支払う費用は窓口によって変わります。
