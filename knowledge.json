@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /knowledge.json
+---
+{
+  "generated_at": {{ site.time | date_to_xmlschema | jsonify }},
+  "articles": [
+    {% assign knowledge_posts = site.posts | sort: "date" | reverse %}
+    {% for post in knowledge_posts %}
+    {
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "description": {{ post.description | default: post.intro | default: "" | strip_html | normalize_whitespace | jsonify }},
+      "published_at": {{ post.date | date_to_xmlschema | jsonify }},
+      "updated_at": {{ post.updated | default: post.date | date_to_xmlschema | jsonify }},
+      "content": {{ post.content | markdownify | strip_html | normalize_whitespace | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
