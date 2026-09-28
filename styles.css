@@ -186,8 +186,10 @@ a {
   display: block;
   width: calc(100% + clamp(48px, 8vw, 84px));
   max-width: none;
-  height: auto;
+  height: clamp(280px, 42vw, 360px);
   margin: calc(clamp(24px, 4vw, 42px) * -1) calc(clamp(24px, 4vw, 42px) * -1) 28px;
+  object-fit: contain;
+  background: #f8f6ef;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
