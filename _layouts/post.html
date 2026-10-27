@@ -26,7 +26,7 @@ layout: default
         </aside>
 
         <div class="article-body">
-          {{ content }}
+          {% if page.faq_before_summary %}{% assign article_parts = content | split: '<!-- faq-before-summary -->' %}{{ article_parts[0] }}{% else %}{{ content }}{% endif %}
 
           {% if page.faq %}
           <section class="article-faq" aria-labelledby="faq-heading">
@@ -40,7 +40,7 @@ layout: default
           </section>
           {% endif %}
 
-          {% include author.html %}
+          {% if page.faq_before_summary %}{{ article_parts[1] }}{% endif %}{% include author.html %}
 
           {% if page.related %}
           <section class="related-articles" aria-labelledby="related-heading">
