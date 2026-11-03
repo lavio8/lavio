@@ -1,0 +1,71 @@
+---
+layout: default
+---
+{% capture ruum_line_cta %}
+<section class="article-cta ruum-line-cta" aria-label="申込み前の初期費用確認">
+  <h2>これから大東建託の物件へ申し込む方へ</h2>
+  <p>気になる物件のURLをLINEでお送りください。初期費用の概算を確認できます。正式金額は別途ご確認ください。</p>
+  <div class="article-cta-actions">
+    <a class="article-button article-button-primary" href="{{ site.cta_url }}" rel="noopener">LINEで初期費用の概算を確認する</a>
+  </div>
+</section>
+{% endcapture %}
+{% assign ruum_content = content | replace: '<!-- ruum-line-cta -->', ruum_line_cta %}
+<main id="main-content" class="article-page">
+  <div class="article-container">
+    {% include breadcrumbs.html %}
+    <article class="article-card-main">
+      <header class="article-header">
+        <p class="article-kicker">大東建託 入居ガイド</p>
+        <h1>{{ page.title }}</h1>
+        <p class="article-intro">{{ page.intro }}</p>
+        <div class="article-meta" aria-label="記事情報">
+          <span>公開日：<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y年%-m月%-d日' }}</time></span>
+          <span>更新日：<time datetime="{{ page.updated | default: page.date | date_to_xmlschema }}">{{ page.updated | default: page.date | date: '%Y年%-m月%-d日' }}</time></span>
+        </div>
+      </header>
+
+      <div class="article-content-grid">
+        <aside class="toc-card" aria-label="目次">
+          <p class="toc-title">目次</p>
+          <ol>
+            {% for item in page.toc %}
+            <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+            {% endfor %}
+          </ol>
+        </aside>
+
+        <div class="article-body">
+          {% if page.faq_before_summary %}{% assign article_parts = ruum_content | split: '<!-- faq-before-summary -->' %}{{ article_parts[0] }}{% else %}{{ ruum_content }}{% endif %}
+
+          {% if page.faq %}
+          <section class="article-faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">FAQ</h2>
+            {% for item in page.faq %}
+            <details {% if forloop.first %}open{% endif %}>
+              <summary>{{ item.question }}</summary>
+              <p>{{ item.answer }}</p>
+            </details>
+            {% endfor %}
+          </section>
+          {% endif %}
+
+          {% if page.faq_before_summary %}{{ article_parts[1] }}{% endif %}{% include author.html %}
+
+          {% if page.related %}
+          <section class="related-articles" aria-labelledby="related-heading">
+            <h2 id="related-heading">関連記事</h2>
+            <ul>
+              {% for item in page.related %}
+              <li><a href="{{ item.url | relative_url }}">{{ item.title }}<span aria-hidden="true"> →</span></a></li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+
+    {{ ruum_line_cta }}
+  </div>
+</main>
