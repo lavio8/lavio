@@ -28,7 +28,7 @@ layout: default
         <div class="article-body">
           {% if page.faq_before_summary %}{% assign article_parts = content | split: '<!-- faq-before-summary -->' %}{{ article_parts[0] }}{% else %}{{ content }}{% endif %}
 
-          {% if page.faq %}
+          {% if page.faq and page.faq_in_content != true %}
           <section class="article-faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading">FAQ</h2>
             {% for item in page.faq %}
